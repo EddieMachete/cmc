@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Home :: Custom Metal Contracting Ltd.</title>
+    <!--meta name="viewport" content="width=980" /-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/index.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/ui/BackgroundCarousel.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(Body_Load);
+        
+        function Body_Load()
+        {
+            var jqueryHelper = $('.backgroundCarousel');
+            var carouselController = new sci.ui.BackgroundCarousel();
+            carouselController.Initialize(jqueryHelper.filter('.backgroundCarousel').first());
+        }
+    </script>
+</head>
+<body>
+    <div id="Header">
+        <div>CMC</div>
+        <ul class="mainNavigation">
+            <li class="selected">Home</li>
+            <li>Company</li>
+            <li>Systems</li>
+            <li>Surfaces</li>
+            <li>Portfolio</li>
+            <li>Downloads</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div id="MainContent">
+        <div class="backgroundCarousel">
+            <img class="current" src="Images/Large/bg-1.jpg" width="800" height="600" />
+            <img class="next" src="Images/Large/bg-1.jpg" />
+        </div>
+    </div>
+    <div id="Footer">
+        <ul class="navigation">
+            <li>Privacy Policy</li>
+            <li>Disclaimers</li>
+            <li>General Terms and Conditions</li>
+            <li>News and Announcements</li>
+            <li>Site Map</li>
+        </ul>
+        <div class="copyright">&copy; 2012 Custom Metal Contracting Ltd.  All rights reserved.</div>
+    </div>
+    <div id="Output">output</div>
+</body>
+</html>

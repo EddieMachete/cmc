@@ -1,0 +1,34 @@
+*
+{
+    margin:0px;
+    padding:0px;
+}
+
+img
+{
+    border:none;
+}
+
+ul
+{
+    list-style:none;
+}
+
+#Output
+{
+    background-color:#FFF;
+    position:absolute;
+    top:0px;
+    right:0px;
+    z-index:2;
+}
+
+.backgroundCarousel
+{
+    overflow:hidden;
+}
+
+.backgroundCarousel img
+{
+    display:none;
+}
