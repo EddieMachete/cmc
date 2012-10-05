@@ -23,12 +23,99 @@ ul
     z-index:2;
 }
 
+#MainContent
+{
+    position:relative;
+}
+
 .backgroundCarousel
 {
     overflow:hidden;
+    position:relative;
 }
 
 .backgroundCarousel img
 {
     display:none;
+    position:relative;
 }
+
+.filmStrip
+{
+    background-color:#000;
+    bottom:0px;
+    color:#FFF;
+    height:81px;
+    overflow:hidden;
+    position:absolute;
+    width:100%;
+}
+
+.filmStripInner
+{
+    bottom:0px;
+    height:81px;
+    overflow:hidden;
+    position:absolute;
+    width:101%;
+}
+
+.filmStrip .thumb
+{
+    float:left;
+    width:16.66%;
+}
+
+.filmStrip .thumbInner
+{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../Images/FilmStrip/calgary-tower-192-120.jpg");
+    background-origin: padding-box;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top:5px solid #CCC;
+    cursor: pointer;
+    height:76px;
+    margin:0px 2px;
+}
+
+.filmStrip .title
+{
+    background:transparent;
+    
+    height:76px;
+    padding:10px 5px 0px 5px;
+}
+
+.filmStrip .title span
+{
+    visibility:hidden;
+}
+
+.filmStrip .title:hover
+{
+    background:rgba(0, 0, 0, 0.6);
+    visibility:visible;
+}
+
+.filmStrip .title:hover span
+{
+    visibility:visible;
+}
+
+
+/*
+background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("/assets/images/lib/clear.png");
+    background-origin: padding-box;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    height: 90px;
+*/
