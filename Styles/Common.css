@@ -4,6 +4,11 @@
     padding:0px;
 }
 
+body
+{
+    background-color:#1B2235;
+}
+
 img
 {
     border:none;
@@ -23,8 +28,51 @@ ul
     z-index:2;
 }
 
+#Header
+{
+    overflow:hidden;
+}
+
+#Header .logo
+{
+    float:left;
+    margin:30px 10px 0px 15px;
+}
+
+#Header .mainNavigation
+{
+    background-color:#232227;
+    margin-top:90px;
+}
+
+#Header .mainNavigation ul
+{
+    overflow:hidden;
+}
+
+#Header .mainNavigation li
+{
+    float:left;
+}
+
+#Header .mainNavigation a
+{
+    color:#FFF;
+    line-height:2em;
+    padding:0em 2em;
+    text-decoration:none;
+}
+
+#Header .mainNavigation a:hover
+{
+    text-decoration:underline;
+}
+
+
+
 #MainContent
 {
+    clear:both;
     position:relative;
 }
 
@@ -119,3 +167,37 @@ background-attachment: scroll;
     cursor: pointer;
     height: 90px;
 */
+
+#Footer
+{
+    color:#FFF;
+}
+
+#Footer a
+{
+    color:#FFF;
+}
+
+#Footer .navigation
+{
+    background-color:#232227;
+    overflow:hidden;
+    /*30 20 */
+}
+
+#Footer .navigation li
+{
+    float:left;
+}
+
+#Footer .navigation a
+{
+    line-height:2em;
+    padding:0px 10px;
+}
+
+#Footer .copyright
+{
+    clear:both;
+    padding:10px;
+}

@@ -47,7 +47,11 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
     }
     
     $(window).resize(function (e) { that.UpdateImageSize(); return true; });
-    this.FilmStrip.find('.thumbInner .title').bind('click', function (e) { return that.Thumb_Click(e); });
+    
+    var ua = navigator.userAgent;
+    var event = (ua.match(/iPad/i)) ? "touchstart" : "click";
+    
+    this.FilmStrip.find('.thumbInner .title').bind(event, function (e) { return that.Thumb_Click(e); });
 };
 
 sci.ui.BackgroundCarousel.prototype.InitializeSlides = function(slides)
