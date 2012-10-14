@@ -93,21 +93,6 @@ sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
     }
 };
 
-sci.ui.BackgroundCarousel.prototype.Thumb_Click = function(e)
-{
-    var t = $(e.currentTarget);
-    
-    if (this.SlideTween.Active)
-        return true;
-    
-    var nextSlide = this.Slides.filter('.' + t.attr('data-slide'));
-    
-    if (nextSlide.is(':hidden'))
-        this.SwapImages(this.Slides.filter(':not(.hidden)'), nextSlide);
-    
-    return true;
-};
-
 sci.ui.BackgroundCarousel.prototype.SwapImages = function(currentSlide, nextSlide)
 {
     this.SlideTween.CurrentSlideWidth = currentSlide.width();
@@ -120,10 +105,15 @@ sci.ui.BackgroundCarousel.prototype.SwapImages = function(currentSlide, nextSlid
     this.SlideTween.CurrentSlide = currentSlide;
     this.SlideTween.NextSlide = nextSlide;
         
-    this.NextAutomaticTransition = this.TimeElapsed + this.SlideTweenLength + 8000;
+    var slideDuration = parseInt(nextSlide.attr('data-slide-duration'));
+    this.NextAutomaticTransition = this.TimeElapsed + this.SlideTweenLength + (isNaN(slideDuration) || slideDuration < 500 ? 8000 : slideDuration);
     
     nextSlide.css('left', this.SlideTween.A + this.SlideTween.CurrentSlideWidth)
         .removeClass('hidden');
+    
+    this.FilmStrip.find('.selected').removeClass('selected');
+    this.FilmStrip.find('.title[data-slide=' + nextSlide.attr('data-slide') + ']')
+        .parent().parent().addClass('selected');
 }
 
 sci.ui.BackgroundCarousel.prototype.KillSlideTransition = function ()
@@ -168,9 +158,23 @@ sci.ui.BackgroundCarousel.prototype.Interval_Interval = function (e)
         this.UpdateImageSizes();
     }
     
-    this.Output.text('interval ' + this.TimeElapsed + ' - ' + this.SlideTween.T);
+    this.Output.text('interval ' + this.TimeElapsed);
     this.TimeElapsed += this.IntervalSpeed;
 }
+
+sci.ui.BackgroundCarousel.prototype.Thumb_Click = function(e)
+{
+    if (this.SlideTween.Active)
+        return true;
+    
+    var t = $(e.currentTarget);
+    var nextSlide = this.Slides.filter('img[data-slide=' + t.attr('data-slide') + ']');
+    
+    if (nextSlide.is(':hidden'))
+        this.SwapImages(this.Slides.filter(':not(.hidden)'), nextSlide);
+    
+    return true;
+};
 
 sci.ui.BackgroundCarousel.prototype.Window_Resize = function (e)
 {
