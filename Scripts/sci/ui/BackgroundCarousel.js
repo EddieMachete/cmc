@@ -20,6 +20,7 @@ sci.ui.BackgroundCarousel = function()
     this.SlideTweenLength = 1500;
     
     this.NextAutomaticTransition = 8000;
+    this.NextImageResize = 0;
     
     this.IsIpad = false;
     
@@ -50,9 +51,9 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
     /*if (navigator.platform === 'iPad')
     {
         //window.onorientationchange = function(e) { return that.Ipad_OnOrientationChange(e); };
-    }
+    }*/
     
-    $(window).resize(function (e) { that.UpdateImageSizes(); return true; });*/
+    $(window).resize(function (e) { return that.Window_Resize(e); });
     
     this.IsIpad = navigator.userAgent.match(/iPad/i);
     
@@ -125,6 +126,16 @@ sci.ui.BackgroundCarousel.prototype.SwapImages = function(currentSlide, nextSlid
         .removeClass('hidden');
 }
 
+sci.ui.BackgroundCarousel.prototype.KillSlideTransition = function ()
+{
+    if (!this.SlideTween.Active)
+        return;
+    
+    this.SlideTween.Active = false;
+    this.SlideTween.CurrentSlide.addClass('hidden').css('left', '0px');
+    this.SlideTween.NextSlide.css('left', (this.SlideTween.C + this.SlideTween.CurrentSlideWidth) + 'px');
+}
+
 sci.ui.BackgroundCarousel.prototype.Interval_Interval = function (e)
 {
     if (this.SlideTween.Active)
@@ -150,8 +161,22 @@ sci.ui.BackgroundCarousel.prototype.Interval_Interval = function (e)
         this.SwapImages(currentSlide, currentSlide.is(':last-child') ? $(this.Slides[0]) : currentSlide.next());
     }
     
+    if (this.NextImageResize && this.TimeElapsed >= this.NextImageResize)
+    {
+        this.NextImageResize = 0;
+        this.KillSlideTransition();
+        this.UpdateImageSizes();
+    }
+    
     this.Output.text('interval ' + this.TimeElapsed + ' - ' + this.SlideTween.T);
     this.TimeElapsed += this.IntervalSpeed;
+}
+
+sci.ui.BackgroundCarousel.prototype.Window_Resize = function (e)
+{
+    this.NextImageResize = this.TimeElapsed + 500;
+    
+    return true;
 }
 
 /*sci.ui.BackgroundCarousel.prototype.Ipad_OnOrientationChange = function(e)
