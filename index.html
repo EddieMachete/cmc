@@ -2,12 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
     <title>Home :: Custom Metal Contracting Ltd.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta name="distribution" content="Global" />
     <!--meta name="viewport" content="width=980" /-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
     <link href="Styles/index.css" rel="stylesheet" type="text/css" />
     <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/Calculations.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/ui/BackgroundCarousel.js"></script>
     <script language="javascript" type="text/javascript">
         $(Body_Load);
@@ -23,7 +27,7 @@
 <body>
     <div id="Header">
         <div class="logo">
-            <img src="Images/Logo.png" width="114" height="71" />
+            <a href="index.html"><img src="Images/Logo.png" width="114" height="71" /></a>
         </div>
         <div class="mainNavigation">
             <ul>
@@ -39,49 +43,53 @@
     </div>
     <div id="MainContent">
         <div class="backgroundCarousel">
-            <img class="current" src="Images/Large/hotel-alma.jpg" width="980" height="580" />
-            <img class="next" src="Images/Large/bg-1.jpg" />
+            <img class="one" src="Images/Large/hotel-alma.jpg" width="980" height="580" data-image-width="980" data-image-height="580" data-slide-duration="8000" />
+            <img class="two hidden" src="Images/Large/calgary-tower.jpg" width="980" height="562" data-image-width="980" data-image-height="652" data-slide-duration="8000" />
+            <img class="three hidden" src="Images/Large/california-university.jpg" width="980" height="651" data-image-width="980" data-image-height="651" data-slide-duration="8000" />
+            <img class="four hidden" src="Images/Large/childrens-hospital-1.jpg" width="980" height="387" data-image-width="980" data-image-height="387" data-slide-duration="8000" />
+            <img class="five hidden" src="Images/Large/bg-1.jpg" width="980" height="580" data-image-width="980" data-image-height="580" data-slide-duration="8000" />
+            <img class="six hidden" src="Images/Large/bg-2.jpg" width="980" height="580" data-image-width="980" data-image-height="580" data-slide-duration="8000" />
         </div>
         <div class="filmStrip">
             <ul class="filmStripInner">
                 <li class="thumb">
                     <div class="thumbInner" style="background-image: url('Images/FilmStrip/hotel-alma.jpg')">
-                        <div class="title" data-image="hotel-alma.jpg" data-image-width="980" data-image-height="580">
+                        <div class="title" data-slide="one">
                             <span>Hotel Alma</span>
                         </div>
                     </div>
                 </li>
                 <li class="thumb">
                     <div class="thumbInner" style="background-image: url('Images/FilmStrip/calgary-tower.jpg')">
-                        <div class="title" data-image="calgary-tower.jpg" data-image-width="980" data-image-height="652">
+                        <div class="title" data-slide="two">
                             <span>Calgary Tower</span>
                         </div>
                     </div>
                 </li>
                 <li class="thumb">
                     <div class="thumbInner" style="background-image: url('Images/FilmStrip/california-university.jpg')">
-                        <div class="title" data-image="california-university.jpg" data-image-width="980" data-image-height="651">
+                        <div class="title" data-slide="three">
                             <span>California University</span>
                         </div>
                     </div>
                 </li>
                 <li class="thumb">
                     <div class="thumbInner" style="background-image: url('Images/FilmStrip/childrens-hospital-1.jpg')">
-                        <div class="title" data-image="childrens-hospital-1.jpg" data-image-width="980" data-image-height="387">
+                        <div class="title" data-slide="four">
                             <span>Childrens Hospital</span>
                         </div>
                     </div>
                 </li>
                 <li class="thumb">
                     <div class="thumbInner" style="background-image: url('Images/FilmStrip/calgary-tower.jpg')">
-                        <div class="title" data-image="bg-1.jpg" data-image-width="980" data-image-height="600">
+                        <div class="title" data-slide="five">
                             <span>Calgary Tower 5</span>
                         </div>
                     </div>
                 </li>
                 <li class="thumb">
                     <div class="thumbInner" style="background-image: url('Images/FilmStrip/calgary-tower.jpg')" >
-                        <div class="title" data-image="bg-1.jpg" data-image-width="980" data-image-height="600">
+                        <div class="title" data-slide="six">
                             <span>Calgary Tower 6</span>
                         </div>
                     </div>
@@ -89,6 +97,7 @@
             </ul>
         </div>
     </div>
+
     <div id="Footer">
         <ul class="navigation">
             <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>

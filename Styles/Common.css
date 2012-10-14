@@ -7,6 +7,7 @@
 body
 {
     background-color:#1B2235;
+    font-family:"Calibri", Helvetica, Arial, sans-serif;
 }
 
 img
@@ -36,13 +37,13 @@ ul
 #Header .logo
 {
     float:left;
-    margin:30px 10px 0px 15px;
+    margin:20px 10px 0px 15px;
 }
 
 #Header .mainNavigation
 {
     background-color:#232227;
-    margin-top:90px;
+    margin-top:70px;
 }
 
 #Header .mainNavigation ul
@@ -84,13 +85,18 @@ ul
 
 .backgroundCarousel img
 {
+    left:0px;
+    position:absolute;
+    top:0px;
+}
+
+.backgroundCarousel img.hidden
+{
     display:none;
-    position:relative;
 }
 
 .filmStrip
 {
-    background-color:#000;
     bottom:0px;
     color:#FFF;
     height:81px;
@@ -101,8 +107,11 @@ ul
 
 .filmStripInner
 {
+    background-color:#000;
     bottom:0px;
-    height:81px;
+    /*height:81px;*/
+    /*height:5px;*/
+    height:20px;
     overflow:hidden;
     position:absolute;
     width:101%;
@@ -128,6 +137,11 @@ ul
     cursor: pointer;
     height:76px;
     margin:0px 2px;
+}
+
+.filmStrip .thumb.selected .thumbInner
+{
+    border-top:5px solid #F00;
 }
 
 .filmStrip .title

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>JS Test</title>
+    <!--meta name="viewport" content="width=980" /-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="Styles/Common.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/index.css" rel="stylesheet" type="text/css" />-->
+    <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <!--<script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/ui/BackgroundCarousel.js"></script>-->
+    <script language="javascript" type="text/javascript">
+        $(Body_Load);
+        
+        function Body_Load()
+        {
+            
+        }
+    </script>
+    <style>
+        *
+        {
+            margin:0px;
+            padding: 0px;
+        }
+        
+        img
+        {
+            border:none;
+        }
+        
+        ul
+        {
+            list-style:none;
+        }
+        
+        #Header, #Footer
+        {
+            border:solid 1px #000;
+            height:100px;
+        }
+        
+        #MainContent
+        {
+            border:solid 1px #000;
+        }
+        
+        .backgroundCarousel
+        {
+            background-color:#FCC;
+            overflow:hidden;
+            position:relative;
+        }
+        
+        .backgroundCarousel .img
+        {
+            background-color:Gray;
+            border:solid 1px Aqua;
+            height:580px;
+            left:-10px;
+            overflow:hidden;
+            position:relative !important;
+            top:0px;
+            width:980px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="Header">
+        &nbsp;
+    </div>
+    <div id="MainContent">
+        <div class="backgroundCarousel">
+            <div class="img one"></div>
+            <div class="img two"></div>
+            <div class="img three"></div>
+        </div>
+    </div>
+    <div id="Footer">&nbsp;</div>
+    <div id="Output">output</div>
+</body>
+</html>

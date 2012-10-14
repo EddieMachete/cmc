@@ -1,19 +1,27 @@
-sci.Provide('sci.ui.LayoutGrid');
+sci.Require('sci.Calculations');
+sci.Provide('sci.ui.BackgroundCarousel');
 
 sci.ui.BackgroundCarousel = function()
 {
     this.View = null;
-    
     this.FilmStrip = null;
-    this.CurrentImage = null;
-    this.NextImage = null;
-    this.OriginalImageSize = { Width:800, Height:600 };
     this.Container = null;
     
     this.Slides = null;
     
     this.Header = null;
     this.Footer = null;
+        
+    this.Interval;
+    this.TimeElapsed = 0;
+    this.IntervalSpeed = 30;
+    
+    this.SlideTween = { A:0, B:0, C:0, T:0, Active:false, Start:0, End:0, CurrentSlide:null, CurrentSlideWidth:0, NextSlide:null };
+    this.SlideTweenLength = 1500;
+    
+    this.NextAutomaticTransition = 8000;
+    
+    this.IsIpad = false;
     
     this.Output = null;
 };
@@ -23,9 +31,8 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
     this.View = view;
     this.Container = $(window); //$(window).height();   // returns height of browser viewport //$(document).height(); // returns height of HTML document
     
-    var jqueryHelper = this.View.find('img.current, img.next');
-    this.CurrentImage = jqueryHelper.filter('img.current');
-    this.NextImage = jqueryHelper.filter('img.next');
+    var jqueryHelper = this.View.find('img');
+    this.Slides = jqueryHelper.filter('img');
     
     jqueryHelper = $('img.current, img.next, #Header, #Footer, .filmStrip');
     this.Header = jqueryHelper.filter('#Header');
@@ -33,97 +40,123 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
     this.FilmStrip = jqueryHelper.filter('.filmStrip');
     this.Output = $('#Output');
     
-    this.OriginalImageSize.Width = this.CurrentImage.width();
-    this.OriginalImageSize.Height = this.CurrentImage.height();
+    this.UpdateImageSizes();
     
-    this.UpdateImageSize();
-    this.PreloadImages();
-    
+    var slideDuration = parseInt(this.Slides.filter(':not(.hidden)').attr('data-slide-duration'));
+    this.NextAutomaticTransition = isNaN(slideDuration) ? 8000 : slideDuration;
+        
     var that = this;
     
-    if (navigator.platform === 'iPad')
+    /*if (navigator.platform === 'iPad')
     {
         //window.onorientationchange = function(e) { return that.Ipad_OnOrientationChange(e); };
     }
     
-    $(window).resize(function (e) { that.UpdateImageSize(); return true; });
+    $(window).resize(function (e) { that.UpdateImageSizes(); return true; });*/
     
-    var ua = navigator.userAgent;
-    var event = (ua.match(/iPad/i)) ? "touchstart" : "click";
+    this.IsIpad = navigator.userAgent.match(/iPad/i);
     
-    this.FilmStrip.find('.thumbInner .title').bind(event, function (e) { return that.Thumb_Click(e); });
+    this.FilmStrip.find('.thumbInner .title').bind(this.IsIpad ? "touchstart" : "click", function (e) { return that.Thumb_Click(e); });
+    
+    // This section is part of a test to see if we can detect when an image loads, so we can then proceed to show it.
+    //this.CurrentImage.bind('load', function  (e) { that.Image_OnLoad(); });
+    this.Interval = setInterval(function (e) { that.Interval_Interval(e); }, this.IntervalSpeed);
+    
+    //this.FilmStrip.find('.thumb .title').first().trigger(this.IsIpad ? "touchstart" : "click");
 };
 
-sci.ui.BackgroundCarousel.prototype.InitializeSlides = function(slides)
-{
-    this.Slides = new Array()
-    
-    for (var i = 0; i < slides.length; i++)
-    {
-        var filmstripInner = this.FilmStrip.find('.filmstripInner');
-        var slide = slides[i];
-        
-        this.Slides.push(
-        {
-            View:filmstripInner.append('<li class="thumb"><div class="thumbInner"><div class="title"><span>' + slide.Title + '</span></div></div></li>')    
-        });
-    }
-};
-
-sci.ui.BackgroundCarousel.prototype.UpdateImageSize = function()
+sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
 {
     var windowWidth = this.Container.width();
     var windowHeight = this.Container.height() - this.Header.height() - this.Footer.height();
-    var w = windowHeight * this.OriginalImageSize.Width / this.OriginalImageSize.Height;
     this.View.height(windowHeight);
     
-    this.Output.text(this.OriginalImageSize.Width + ', ' + this.OriginalImageSize.Height);
-    
-    if (w > windowWidth)
+    for (var i=0; i<this.Slides.length; i++)
     {
-        this.CurrentImage.width(w);
-        this.CurrentImage.height(windowHeight);
+        var slide = $(this.Slides[i]);
+        var w = windowHeight * parseInt(slide.attr('data-image-width')) / parseInt(slide.attr('data-image-height'));
+        
+        if (w > windowWidth)
+        {
+            slide.width(w);
+            slide.height(windowHeight);
+        }
+        else
+        {
+            slide.width(windowWidth);
+            slide.height(windowWidth * parseInt(slide.attr('data-image-height')) / parseInt(slide.attr('data-image-width')));
+        }
+        
+        slide.css('top', (-(slide.height() - windowHeight) / 2) + 'px')
+            .css('left', (-(slide.width() - windowWidth) / 2) + 'px');
     }
-    else
-    {
-        this.CurrentImage.width(windowWidth);
-        this.CurrentImage.height(windowWidth * this.OriginalImageSize.Height / this.OriginalImageSize.Width);
-    }
-    
-    this.CurrentImage.css('display', 'inline-block')
-        .css('top', (-(this.CurrentImage.height() - windowHeight) / 2) + 'px')
-        .css('left', (-(this.CurrentImage.width() - windowWidth) / 2) + 'px');
-};
-
-sci.ui.BackgroundCarousel.prototype.PreloadImages = function()
-{
-    var thumbs = this.FilmStrip.find('.thumbInner .title');
-    var imgObject = new Image();
-    
-    for (var i=0; i<thumbs.length; i++)
-    {
-        imgObject.src = 'Images/Large/' + $(thumbs[i]).data('image');
-    }
-    
-    // function invoked on image load
-    // imgObject.onLoad=imagesLoaded();
-    // function imagesLoaded() { alert(imgObject.width); }
 };
 
 sci.ui.BackgroundCarousel.prototype.Thumb_Click = function(e)
 {
     var t = $(e.currentTarget);
-    this.CurrentImage.attr('src', 'Images/Large/' + t.data('image'));
-    this.OriginalImageSize.Width = parseInt(t.data('image-width'));
-    this.OriginalImageSize.Height = parseInt(t.data('image-height'));
-    this.UpdateImageSize();
+    
+    if (this.SlideTween.Active)
+        return true;
+    
+    var nextSlide = this.Slides.filter('.' + t.attr('data-slide'));
+    
+    if (nextSlide.is(':hidden'))
+        this.SwapImages(this.Slides.filter(':not(.hidden)'), nextSlide);
     
     return true;
 };
 
-sci.ui.BackgroundCarousel.prototype.Ipad_OnOrientationChange = function(e)
+sci.ui.BackgroundCarousel.prototype.SwapImages = function(currentSlide, nextSlide)
 {
-    this.UpdateImageSize();
+    this.SlideTween.CurrentSlideWidth = currentSlide.width();
+    this.SlideTween.A = currentSlide.position().left;
+    this.SlideTween.C = -(this.SlideTween.CurrentSlideWidth + (nextSlide.width() - this.Container.width()) / 2);
+    this.SlideTween.B = .8 * this.SlideTween.C;
+    this.SlideTween.Active = true;
+    this.SlideTween.Start = this.TimeElapsed;
+    this.SlideTween.End = this.TimeElapsed + this.SlideTweenLength;
+    this.SlideTween.CurrentSlide = currentSlide;
+    this.SlideTween.NextSlide = nextSlide;
+        
+    this.NextAutomaticTransition = this.TimeElapsed + this.SlideTweenLength + 8000;
+    
+    nextSlide.css('left', this.SlideTween.A + this.SlideTween.CurrentSlideWidth)
+        .removeClass('hidden');
+}
+
+sci.ui.BackgroundCarousel.prototype.Interval_Interval = function (e)
+{
+    if (this.SlideTween.Active)
+    {
+        this.SlideTween.T = (this.TimeElapsed - this.SlideTween.Start) / (this.SlideTween.End - this.SlideTween.Start);
+        
+        if (this.SlideTween.T >= 1)
+        {
+            this.SlideTween.Active = false;
+            this.SlideTween.CurrentSlide.addClass('hidden').css('left', '0px');
+            this.SlideTween.NextSlide.css('left', (this.SlideTween.C + this.SlideTween.CurrentSlideWidth) + 'px');
+        }
+        else
+        {
+            var left = sci.Calculations.GetQuadraticValue(this.SlideTween.T, this.SlideTween.A, this.SlideTween.B, this.SlideTween.C);
+            this.SlideTween.CurrentSlide.css('left', left + 'px');
+            this.SlideTween.NextSlide.css('left', (left + this.SlideTween.CurrentSlideWidth) + 'px');
+        }
+    }
+    else if (this.TimeElapsed >= this.NextAutomaticTransition)
+    {
+        var currentSlide = this.Slides.filter(':not(.hidden)');
+        this.SwapImages(currentSlide, currentSlide.is(':last-child') ? $(this.Slides[0]) : currentSlide.next());
+    }
+    
+    this.Output.text('interval ' + this.TimeElapsed + ' - ' + this.SlideTween.T);
+    this.TimeElapsed += this.IntervalSpeed;
+}
+
+/*sci.ui.BackgroundCarousel.prototype.Ipad_OnOrientationChange = function(e)
+{
+    this.UpdateImageSizes();
     
     return;
     
@@ -150,6 +183,6 @@ sci.ui.BackgroundCarousel.prototype.Ipad_OnOrientationChange = function(e)
     }
     
     return true;
-};
+};*/
 
 sci.Ready('sci.ui.BackgroundCarousel');
