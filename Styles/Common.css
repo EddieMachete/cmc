@@ -7,7 +7,7 @@
 body
 {
     background-color:#1B2235;
-    font-family:"Calibri", Helvetica, Arial, sans-serif;
+    font-family:"ff-din-web", "Calibri", Arial, Helvetica, sans-serif;
 }
 
 img
@@ -44,6 +44,7 @@ ul
 {
     background-color:#232227;
     margin-top:70px;
+    text-transform:uppercase;
 }
 
 #Header .mainNavigation ul
@@ -60,7 +61,7 @@ ul
 {
     color:#FFF;
     line-height:2em;
-    padding:0em 2em;
+    padding:.5em 1em;
     text-decoration:none;
 }
 
@@ -68,8 +69,6 @@ ul
 {
     text-decoration:underline;
 }
-
-
 
 #MainContent
 {
@@ -83,16 +82,72 @@ ul
     position:relative;
 }
 
-.backgroundCarousel img
+.backgroundCarousel .slide
 {
     left:0px;
     position:absolute;
     top:0px;
 }
 
-.backgroundCarousel img.hidden
+.backgroundCarousel .slide img
+{
+    left:0px;
+    position:absolute;
+    top:0px;
+}
+
+.backgroundCarousel .slide.hidden
 {
     display:none;
+}
+
+.backgroundCarousel .slide .details
+{
+    color: white;
+    display:none;
+    left:0px;
+    position:relative;
+    text-shadow: 2px 2px #333;
+    top:0px;
+    width:450px;
+}
+
+.backgroundCarousel .slide .details .highlight
+{
+    background-color:#F00;
+    height:5px;
+    margin-bottom:5px;
+    width:35px;
+}
+
+.backgroundCarousel .slide .details .title
+{
+    font-size:65px;
+    font-weight:bold;
+    letter-spacing:-.9px;
+    line-height:55px;
+    padding-left:3px;
+    text-transform:uppercase;
+}
+
+.backgroundCarousel .slide .details .description
+{
+    font-size:15px;
+    line-height:16px;
+    margin:10px 0px;
+}
+
+.backgroundCarousel .slide .details .options
+{
+    font-size:15px;
+    line-height:30px;
+    margin:10px 0px;
+}
+
+.backgroundCarousel .slide .details .options li
+{
+    background:url(../Images/bullet-arrow.gif) no-repeat center left;
+    padding-left:20px;
 }
 
 .filmStrip
@@ -110,7 +165,8 @@ ul
     background-color:#000;
     bottom:0px;
     /*height:81px;*/
-    height:5px;
+    /*height:5px;*/
+    height:20px;
     overflow:hidden;
     position:absolute;
     width:101%;
@@ -167,20 +223,6 @@ ul
     visibility:visible;
 }
 
-
-/*
-background-attachment: scroll;
-    background-clip: border-box;
-    background-color: transparent;
-    background-image: url("/assets/images/lib/clear.png");
-    background-origin: padding-box;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
-    height: 90px;
-*/
-
 #Footer
 {
     color:#FFF;
@@ -195,7 +237,6 @@ background-attachment: scroll;
 {
     background-color:#232227;
     overflow:hidden;
-    /*30 20 */
 }
 
 #Footer .navigation li
@@ -212,5 +253,7 @@ background-attachment: scroll;
 #Footer .copyright
 {
     clear:both;
+    font-size:12px;
+    line-height:12px;
     padding:10px;
 }

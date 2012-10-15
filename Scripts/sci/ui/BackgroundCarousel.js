@@ -32,8 +32,8 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
     this.View = view;
     this.Container = $(window); //$(window).height();   // returns height of browser viewport //$(document).height(); // returns height of HTML document
     
-    var jqueryHelper = this.View.find('img');
-    this.Slides = jqueryHelper.filter('img');
+    var jqueryHelper = this.View.find('.slide');
+    this.Slides = jqueryHelper.filter('.slide');
     
     jqueryHelper = $('img.current, img.next, #Header, #Footer, .filmStrip');
     this.Header = jqueryHelper.filter('#Header');
@@ -43,7 +43,9 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
     
     this.UpdateImageSizes();
     
-    var slideDuration = parseInt(this.Slides.filter(':not(.hidden)').attr('data-slide-duration'));
+    var currentSlide = this.Slides.filter(':not(.hidden)');
+    currentSlide.find('.details').css('display', 'block');
+    var slideDuration = parseInt(currentSlide.attr('data-slide-duration'));
     this.NextAutomaticTransition = isNaN(slideDuration) ? 8000 : slideDuration;
         
     var that = this;
@@ -76,28 +78,38 @@ sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
     {
         var slide = $(this.Slides[i]);
         var w = windowHeight * parseInt(slide.attr('data-image-width')) / parseInt(slide.attr('data-image-height'));
+        var image = slide.find('img');
         
         if (w > windowWidth)
         {
-            slide.width(w);
-            slide.height(windowHeight);
+            image.width(w);
+            image.height(windowHeight);
         }
         else
         {
-            slide.width(windowWidth);
-            slide.height(windowWidth * parseInt(slide.attr('data-image-height')) / parseInt(slide.attr('data-image-width')));
+            image.width(windowWidth);
+            image.height(windowWidth * parseInt(slide.attr('data-image-height')) / parseInt(slide.attr('data-image-width')));
         }
         
-        slide.css('top', (-(slide.height() - windowHeight) / 2) + 'px')
-            .css('left', (-(slide.width() - windowWidth) / 2) + 'px');
+        var offsetTop = (image.height() - windowHeight) / 2;
+        var offsetLeft = (image.width() - windowWidth) / 2;
+        
+        slide.css('top', (-offsetTop) + 'px')
+            .css('left', (-offsetLeft) + 'px');
+        
+        slide.find('.details').css('top', (50 + offsetTop) + 'px')
+            .css('left', (50 + offsetLeft) + 'px');
     }
 };
 
 sci.ui.BackgroundCarousel.prototype.SwapImages = function(currentSlide, nextSlide)
 {
-    this.SlideTween.CurrentSlideWidth = currentSlide.width();
+    var currentImage = currentSlide.find('img');
+    var nextImage = nextSlide.find('img');
+    
+    this.SlideTween.CurrentSlideWidth = currentImage.width();
     this.SlideTween.A = currentSlide.position().left;
-    this.SlideTween.C = -(this.SlideTween.CurrentSlideWidth + (nextSlide.width() - this.Container.width()) / 2);
+    this.SlideTween.C = -(this.SlideTween.CurrentSlideWidth + (nextImage.width() - this.Container.width()) / 2);
     this.SlideTween.B = .8 * this.SlideTween.C;
     this.SlideTween.Active = true;
     this.SlideTween.Start = this.TimeElapsed;
@@ -108,6 +120,8 @@ sci.ui.BackgroundCarousel.prototype.SwapImages = function(currentSlide, nextSlid
     var slideDuration = parseInt(nextSlide.attr('data-slide-duration'));
     this.NextAutomaticTransition = this.TimeElapsed + this.SlideTweenLength + (isNaN(slideDuration) || slideDuration < 500 ? 8000 : slideDuration);
     
+    currentSlide.find('.details').fadeOut(500);
+    nextSlide.find('.details').fadeIn(1000);
     nextSlide.css('left', this.SlideTween.A + this.SlideTween.CurrentSlideWidth)
         .removeClass('hidden');
     
@@ -168,7 +182,7 @@ sci.ui.BackgroundCarousel.prototype.Thumb_Click = function(e)
         return true;
     
     var t = $(e.currentTarget);
-    var nextSlide = this.Slides.filter('img[data-slide=' + t.attr('data-slide') + ']');
+    var nextSlide = this.Slides.filter('div[data-slide=' + t.attr('data-slide') + ']');
     
     if (nextSlide.is(':hidden'))
         this.SwapImages(this.Slides.filter(':not(.hidden)'), nextSlide);
