@@ -45,7 +45,7 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
     
     var currentSlide = this.Slides.filter(':not(.hidden)');
     currentSlide.find('.details').css('display', 'block');
-    var slideDuration = parseInt(currentSlide.attr('data-slide-duration'));
+    var slideDuration = parseInt(currentSlide.attr('data-slide-duration'), 10);
     this.NextAutomaticTransition = isNaN(slideDuration) ? 8000 : slideDuration;
         
     var that = this;
@@ -59,7 +59,7 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
     
     this.IsIpad = navigator.userAgent.match(/iPad/i);
     
-    this.FilmStrip.find('.thumbInner .title').bind(this.IsIpad ? "touchstart" : "click", function (e) { return that.Thumb_Click(e); });
+    this.FilmStrip.find('.thumbInner').bind(this.IsIpad ? "touchstart" : "click", function (e) { return that.Thumb_Click(e); });
     
     // This section is part of a test to see if we can detect when an image loads, so we can then proceed to show it.
     //this.CurrentImage.bind('load', function  (e) { that.Image_OnLoad(); });
@@ -77,7 +77,7 @@ sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
     for (var i=0; i<this.Slides.length; i++)
     {
         var slide = $(this.Slides[i]);
-        var w = windowHeight * parseInt(slide.attr('data-image-width')) / parseInt(slide.attr('data-image-height'));
+        var w = windowHeight * parseInt(slide.attr('data-image-width'), 10) / parseInt(slide.attr('data-image-height'), 10);
         var image = slide.find('img');
         
         if (w > windowWidth)
@@ -88,7 +88,7 @@ sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
         else
         {
             image.width(windowWidth);
-            image.height(windowWidth * parseInt(slide.attr('data-image-height')) / parseInt(slide.attr('data-image-width')));
+            image.height(windowWidth * parseInt(slide.attr('data-image-height'), 10) / parseInt(slide.attr('data-image-width'), 10));
         }
         
         var offsetTop = (image.height() - windowHeight) / 2;
@@ -97,8 +97,8 @@ sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
         slide.css('top', (-offsetTop) + 'px')
             .css('left', (-offsetLeft) + 'px');
         
-        slide.find('.details').css('top', (50 + offsetTop) + 'px')
-            .css('left', (50 + offsetLeft) + 'px');
+        slide.find('.details').css('top', (this.View.height() / 3.5 + offsetTop) + 'px')
+            .css('left', (120 + offsetLeft) + 'px');
     }
 };
 
@@ -117,18 +117,18 @@ sci.ui.BackgroundCarousel.prototype.SwapImages = function(currentSlide, nextSlid
     this.SlideTween.CurrentSlide = currentSlide;
     this.SlideTween.NextSlide = nextSlide;
         
-    var slideDuration = parseInt(nextSlide.attr('data-slide-duration'));
+    var slideDuration = parseInt(nextSlide.attr('data-slide-duration'), 10);
     this.NextAutomaticTransition = this.TimeElapsed + this.SlideTweenLength + (isNaN(slideDuration) || slideDuration < 500 ? 8000 : slideDuration);
     
     currentSlide.find('.details').fadeOut(500);
-    nextSlide.find('.details').fadeIn(1000);
+    //nextSlide.find('.details').fadeIn(1000);
     nextSlide.css('left', this.SlideTween.A + this.SlideTween.CurrentSlideWidth)
         .removeClass('hidden');
     
     this.FilmStrip.find('.selected').removeClass('selected');
     this.FilmStrip.find('.title[data-slide=' + nextSlide.attr('data-slide') + ']')
         .parent().parent().addClass('selected');
-}
+};
 
 sci.ui.BackgroundCarousel.prototype.KillSlideTransition = function ()
 {
@@ -138,7 +138,8 @@ sci.ui.BackgroundCarousel.prototype.KillSlideTransition = function ()
     this.SlideTween.Active = false;
     this.SlideTween.CurrentSlide.addClass('hidden').css('left', '0px');
     this.SlideTween.NextSlide.css('left', (this.SlideTween.C + this.SlideTween.CurrentSlideWidth) + 'px');
-}
+    this.SlideTween.NextSlide.find('.details').fadeIn(1000);
+};
 
 sci.ui.BackgroundCarousel.prototype.Interval_Interval = function (e)
 {
@@ -150,7 +151,8 @@ sci.ui.BackgroundCarousel.prototype.Interval_Interval = function (e)
         {
             this.SlideTween.Active = false;
             this.SlideTween.CurrentSlide.addClass('hidden').css('left', '0px');
-            this.SlideTween.NextSlide.css('left', (this.SlideTween.C + this.SlideTween.CurrentSlideWidth) + 'px');
+            this.SlideTween.NextSlide.css('left', (this.SlideTween.C + this.SlideTween.CurrentSlideWidth) + 'px')
+                .find('.details').fadeIn(1000);;
         }
         else
         {
@@ -172,16 +174,16 @@ sci.ui.BackgroundCarousel.prototype.Interval_Interval = function (e)
         this.UpdateImageSizes();
     }
     
-    this.Output.text('interval ' + this.TimeElapsed);
+    //this.Output.text('interval ' + this.TimeElapsed);
     this.TimeElapsed += this.IntervalSpeed;
-}
+};
 
 sci.ui.BackgroundCarousel.prototype.Thumb_Click = function(e)
 {
     if (this.SlideTween.Active)
         return true;
     
-    var t = $(e.currentTarget);
+    var t = $(e.currentTarget).find('.title');
     var nextSlide = this.Slides.filter('div[data-slide=' + t.attr('data-slide') + ']');
     
     if (nextSlide.is(':hidden'))
@@ -195,7 +197,7 @@ sci.ui.BackgroundCarousel.prototype.Window_Resize = function (e)
     this.NextImageResize = this.TimeElapsed + 500;
     
     return true;
-}
+};
 
 /*sci.ui.BackgroundCarousel.prototype.Ipad_OnOrientationChange = function(e)
 {

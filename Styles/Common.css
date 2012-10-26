@@ -10,6 +10,15 @@ body
     font-family:"ff-din-web", "Calibri", Arial, Helvetica, sans-serif;
 }
 
+h1
+{
+    background: rgba(255, 255, 255, 0.4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33FFFFFF, endColorstr=#33FFFFFF);
+    font-weight:normal;
+    padding:5px 20px;
+    text-transform:uppercase;
+}
+
 img
 {
     border:none;
@@ -23,6 +32,7 @@ ul
 #Output
 {
     background-color:#FFF;
+    display:none;
     position:absolute;
     top:0px;
     right:0px;
@@ -37,13 +47,24 @@ ul
 #Header .logo
 {
     float:left;
-    margin:20px 10px 0px 15px;
+    margin:20px 0px 0px 10px;
+}
+
+#Header .slogan
+{
+    color:#666;
+    float:right;
+    font-size:2em;
+    font-style:italic;
+    font-weight:bold;
+    margin:5px 10px;
+    text-transform:uppercase;
 }
 
 #Header .mainNavigation
 {
     background-color:#232227;
-    margin-top:70px;
+    margin-top:95px;/*70px;*/
     text-transform:uppercase;
 }
 
@@ -60,9 +81,14 @@ ul
 #Header .mainNavigation a
 {
     color:#FFF;
-    line-height:2em;
-    padding:.5em 1em;
+    line-height:2.2em;
+    padding:.5em .5em;
     text-decoration:none;
+}
+
+#Header .mainNavigation li.selected a
+{
+    color:#CCC;
 }
 
 #Header .mainNavigation a:hover
@@ -107,7 +133,7 @@ ul
     display:none;
     left:0px;
     position:relative;
-    text-shadow: 2px 2px #333;
+    /*text-shadow: 2px 2px #333;*/
     top:0px;
     width:450px;
 }
@@ -165,8 +191,7 @@ ul
     background-color:#000;
     bottom:0px;
     /*height:81px;*/
-    /*height:5px;*/
-    height:20px;
+    height:7px;
     overflow:hidden;
     position:absolute;
     width:101%;
@@ -188,7 +213,7 @@ ul
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-top:5px solid #CCC;
+    border-top:7px solid #666;
     cursor: pointer;
     height:76px;
     margin:0px 2px;
@@ -196,7 +221,7 @@ ul
 
 .filmStrip .thumb.selected .thumbInner
 {
-    border-top:5px solid #F00;
+    border-top:7px solid #F00;
 }
 
 .filmStrip .title
@@ -226,6 +251,8 @@ ul
 #Footer
 {
     color:#FFF;
+    font-size:12px;
+    line-height:10px;
 }
 
 #Footer a
@@ -247,13 +274,11 @@ ul
 #Footer .navigation a
 {
     line-height:2em;
-    padding:0px 10px;
+    padding:0px 7px;
 }
 
 #Footer .copyright
 {
     clear:both;
-    font-size:12px;
-    line-height:12px;
-    padding:10px;
+    padding:3px 7px 5px 7px;
 }
