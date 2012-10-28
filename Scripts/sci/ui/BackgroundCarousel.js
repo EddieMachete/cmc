@@ -73,6 +73,8 @@ sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
     var windowWidth = this.Container.width();
     var windowHeight = this.Container.height() - this.Header.height() - this.Footer.height();
     this.View.height(windowHeight);
+    var detailsWidth = this.View.width() - 120;
+    detailsWidth = detailsWidth < 450 ? 450 : detailsWidth;
     
     for (var i=0; i<this.Slides.length; i++)
     {
@@ -98,7 +100,8 @@ sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
             .css('left', (-offsetLeft) + 'px');
         
         slide.find('.details').css('top', (this.View.height() / 3.5 + offsetTop) + 'px')
-            .css('left', (120 + offsetLeft) + 'px');
+            .css('left', (120 + offsetLeft) + 'px')
+            .css('width', detailsWidth + 'px');
     }
 };
 
