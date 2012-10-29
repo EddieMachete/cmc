@@ -23,3 +23,5 @@ git add -A
 git rm -r --cached .c9revisions/*
 commit -m 'Added details section on every slide'
 git push -u origin master
+
+git reset --hard HEAD~1

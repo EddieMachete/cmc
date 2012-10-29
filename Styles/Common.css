@@ -8,12 +8,14 @@ body
 {
     background-color:#1B2235;
     font-family:"ff-din-web", "Calibri", Arial, Helvetica, sans-serif;
+    min-width:980px;
 }
 
 h1
 {
     background: rgba(255, 255, 255, 0.4);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33FFFFFF, endColorstr=#33FFFFFF);
+    font-size:2.5em;
     font-weight:normal;
     padding:5px 20px;
     text-transform:uppercase;
@@ -102,6 +104,28 @@ ul
     position:relative;
 }
 
+#MainContent .content
+{
+    overflow:hidden;
+}
+
+/* *** Background Image Container ****************************** */
+.backgroundImageContainer
+{
+    left:0px;
+    overflow:hidden;
+    position:absolute;
+    top:0px;
+    width:100%;
+    z-index:-1;
+}
+
+.backgroundImageContainer img
+{
+    position:absolute;
+}
+
+/* *** Background Carousel ****************************** */
 .backgroundCarousel
 {
     overflow:hidden;

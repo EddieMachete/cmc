@@ -2,8 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
     <title>Contact :: Custom Metal Contracting Ltd.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta name="distribution" content="Global" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Contact.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/ui/ScalableBackgroundController.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(Body_Load);
+        
+        function Body_Load()
+        {
+            var jqueryHelper = $('.backgroundImageContainer');
+            var backgroundController = new sci.ui.ScalableBackgroundController();
+            backgroundController.Initialize(jqueryHelper.filter('.backgroundImageContainer').first());
+        }
+    </script>
 </head>
 <body>
     <div id="Header">
@@ -24,16 +41,79 @@
         </div>
     </div>
     <div id="MainContent">
-        <h1>Contact</h1>
-        <img src="Images/custom-metal-exterior-sign.jpg" />
+        <div class="backgroundImageContainer">
+            <img src="Images/custom-metal-exterior-sign.jpg" width="1200" height="797" />
+        </div>
+        <div class="content">
+            <h1>Contact</h1>
+            <div class="contact section">
+                <div class="officeGroup corporate">
+                    <h3>Corporate Head Office:</h3>
+                    <div class="office">
+                        <div class="name">Custom Metal Contracting Ltd.</div>
+                        <div class="address">49, 5342 – 72 Avenue S.E.<br />Calgary, Alberta, Canada T2C 4X5</div>
+                        <div class="phone">Phone: 403-291-9767</div>
+                        <div class="fax">Fax: 403-291-9416</div>
+                        <div class="email">sales@custommetal.ab.ca</div>
+                    </div>
+                    <div class="googleMap">
+                        <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                            src="https://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Custom+Metal+Contracting+Ltd,+Calgary,+AB&amp;aq=3&amp;oq=custom+metal&amp;sll=49.257735,-123.123904&amp;sspn=0.232362,0.351219&amp;t=h&amp;ie=UTF8&amp;hq=Custom+Metal+Contracting+Ltd,&amp;hnear=Calgary,+Division+No.+6,+Alberta&amp;ll=50.989557,-113.956761&amp;spn=0.008104,0.012875&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+                        <br />
+                        <small>
+                            <a href="https://maps.google.ca/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Custom+Metal+Contracting+Ltd,+Calgary,+AB&amp;aq=3&amp;oq=custom+metal&amp;sll=49.257735,-123.123904&amp;sspn=0.232362,0.351219&amp;t=h&amp;ie=UTF8&amp;hq=Custom+Metal+Contracting+Ltd,&amp;hnear=Calgary,+Division+No.+6,+Alberta&amp;ll=50.989557,-113.956761&amp;spn=0.008104,0.012875&amp;z=15&amp;iwloc=A" style="text-align:left">
+                                View Larger Map
+                            </a>
+                        </small>
+                    </div>
+                </div>
+                <div class="officeGroup">
+                    <h3>Regional Representatives:</h3>
+                    <div class="office">
+                        <div class="name">Southern California<br />MH Powell & Co. Inc.</div>
+                        <div class="contact">Steve Heller</div>
+                        <div class="website">www.seismicjoints.com</div>
+                        <div class="phone">Phone: 323-887-0037</div>
+                        <div class="fax">Fax: 323-887-0877</div>
+                        <div class="email">sales@mhpowell.net</div>
+                    </div>
+                    <div class="office">
+                        <div class="name">Washington, Idaho, Montana<br/>Furness Associates, LLC</div>
+                        <div class="contact">Bob Furness</div>
+                        <div class="website">www.FurnessAssociates.com</div>
+                        <div class="phone">Phone: 425-422-2561</div>
+                        <div class="fax">Fax: 866-761-4531</div>
+                        <div class="email">bob@FurnessAssociates.com</div>
+                    </div>
+                    <div class="office newLine">
+                        <div class="name">Northern California<br />MF Murray companies</div>
+                        <div class="contact">Michael Murray </div>
+                        <div class="website">www.Mfmurryco.com</div>
+                        <div class="phone">Phone: 888-692-0400</div>
+                        <div class="phone">Phone: 415-468-8448</div>
+                        <div class="fax">Fax: 415-468-5009</div>
+                        <div class="email">michael@mfmurryco.com</div>
+                    </div>
+                    <div class="office">
+                        <div class="name">Alaska, Nevada, Oregon, Utah, Arizona, New Mexico<br/>CNM Services, LLC</div>
+                        <div class="contact">Mitch Vogt, CSI</div>
+                        <div class="website">www.cnmservicesllc.com</div>
+                        <div class="phone">Phone: 503-538-6190</div>
+                        <div class="fax">Fax: 503-538-6905</div>
+                        <div class="fax">Efax: 775-201-0001</div>
+                        <div class="email">mitch@cnmservicesllc.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="Footer">
         <ul class="navigation">
-            <li>Privacy Policy</li>
-            <li>Disclaimers</li>
-            <li>General Terms and Conditions</li>
-            <li>News and Announcements</li>
-            <li>Site Map</li>
+            <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+            <li><a href="Disclaimers.html">Disclaimers</a></li>
+            <li><a href="GeneralTermsAndConditions.html">General Terms and Conditions</a></li>
+            <li><a href="NewsAndAnnouncements.html">News and Announcements</a></li>
+            <li><a href="SiteMap.html">Site Map</a></li>
         </ul>
         <div class="copyright">&copy; 2012 Custom Metal Contracting Ltd.  All rights reserved.</div>
     </div>
