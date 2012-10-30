@@ -2,3 +2,150 @@ body
 {
     overflow: hidden;
 }
+
+/* *** Background Carousel ****************************** */
+.backgroundCarousel
+{
+    overflow:hidden;
+    position:relative;
+}
+
+.backgroundCarousel .slide
+{
+    left:0px;
+    position:absolute;
+    top:0px;
+}
+
+.backgroundCarousel .slide img
+{
+    left:0px;
+    position:absolute;
+    top:0px;
+}
+
+.backgroundCarousel .slide.hidden
+{
+    display:none;
+}
+
+.backgroundCarousel .slide .details
+{
+    color: white;
+    display:none;
+    left:0px;
+    position:relative;
+    /*text-shadow: 2px 2px #333;*/
+    top:0px;
+    /*width:450px;*/
+}
+
+.backgroundCarousel .slide .details .highlight
+{
+    background-color:#F00;
+    height:5px;
+    margin-bottom:5px;
+    width:35px;
+}
+
+.backgroundCarousel .slide .details .title
+{
+    font-size:65px;
+    font-weight:bold;
+    letter-spacing:-.9px;
+    line-height:55px;
+    padding-left:3px;
+    text-transform:uppercase;
+}
+
+.backgroundCarousel .slide .details .description
+{
+    font-size:15px;
+    line-height:20px;
+    margin:10px 0px;
+}
+
+.backgroundCarousel .slide .details .options
+{
+    font-size:15px;
+    line-height:30px;
+    margin:10px 0px;
+}
+
+.backgroundCarousel .slide .details .options li
+{
+    background:url(../Images/bullet-arrow.gif) no-repeat center left;
+    padding-left:20px;
+}
+
+.filmStrip
+{
+    bottom:0px;
+    color:#FFF;
+    height:81px;
+    overflow:hidden;
+    position:absolute;
+    width:100%;
+}
+
+.filmStripInner
+{
+    background-color:#000;
+    bottom:0px;
+    /*height:81px;*/
+    height:7px;
+    overflow:hidden;
+    position:absolute;
+    width:101%;
+}
+
+.filmStrip .thumb
+{
+    float:left;
+    width:16.66%;
+}
+
+.filmStrip .thumbInner
+{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../Images/FilmStrip/calgary-tower-192-120.jpg");
+    background-origin: padding-box;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top:7px solid #666;
+    cursor: pointer;
+    height:76px;
+    margin:0px 2px;
+}
+
+.filmStrip .thumb.selected .thumbInner
+{
+    border-top:7px solid #F00;
+}
+
+.filmStrip .title
+{
+    background:transparent;
+    
+    height:76px;
+    padding:10px 5px 0px 5px;
+}
+
+.filmStrip .title span
+{
+    visibility:hidden;
+}
+
+.filmStrip .title:hover
+{
+    background:rgba(0, 0, 0, 0.6);
+    visibility:visible;
+}
+
+.filmStrip .title:hover span
+{
+    visibility:visible;
+}

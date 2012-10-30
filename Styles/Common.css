@@ -7,7 +7,7 @@
 body
 {
     background-color:#1B2235;
-    font-family:"ff-din-web", "Calibri", Arial, Helvetica, sans-serif;
+    font-family:"Calibri", Arial, Helvetica, sans-serif;
     min-width:980px;
 }
 
@@ -29,6 +29,11 @@ img
 ul
 {
     list-style:none;
+}
+
+ol
+{
+    padding-left:40px;
 }
 
 #Output
@@ -125,153 +130,54 @@ ul
     position:absolute;
 }
 
-/* *** Background Carousel ****************************** */
-.backgroundCarousel
+/* *** TEXT BLOCK *********************************************** */
+#MainContent .content .section
 {
-    overflow:hidden;
-    position:relative;
-}
-
-.backgroundCarousel .slide
-{
-    left:0px;
-    position:absolute;
-    top:0px;
-}
-
-.backgroundCarousel .slide img
-{
-    left:0px;
-    position:absolute;
-    top:0px;
-}
-
-.backgroundCarousel .slide.hidden
-{
-    display:none;
-}
-
-.backgroundCarousel .slide .details
-{
-    color: white;
-    display:none;
-    left:0px;
-    position:relative;
-    /*text-shadow: 2px 2px #333;*/
-    top:0px;
-    /*width:450px;*/
-}
-
-.backgroundCarousel .slide .details .highlight
-{
-    background-color:#F00;
-    height:5px;
-    margin-bottom:5px;
-    width:35px;
-}
-
-.backgroundCarousel .slide .details .title
-{
-    font-size:65px;
-    font-weight:bold;
-    letter-spacing:-.9px;
-    line-height:55px;
-    padding-left:3px;
-    text-transform:uppercase;
-}
-
-.backgroundCarousel .slide .details .description
-{
-    font-size:15px;
-    line-height:20px;
-    margin:10px 0px;
-}
-
-.backgroundCarousel .slide .details .options
-{
-    font-size:15px;
-    line-height:30px;
-    margin:10px 0px;
-}
-
-.backgroundCarousel .slide .details .options li
-{
-    background:url(../Images/bullet-arrow.gif) no-repeat center left;
-    padding-left:20px;
-}
-
-.filmStrip
-{
-    bottom:0px;
     color:#FFF;
-    height:81px;
+    margin:65px 0px;
     overflow:hidden;
-    position:absolute;
-    width:100%;
 }
 
-.filmStripInner
+#MainContent .content .section.withTranslucentBackground
 {
-    background-color:#000;
-    bottom:0px;
-    /*height:81px;*/
-    height:7px;
-    overflow:hidden;
-    position:absolute;
-    width:101%;
+    background: rgba(65, 65, 65, 0.9);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC333333, endColorstr=#CC333333);
+    padding:30px 0px;
 }
 
-.filmStrip .thumb
+.section .textBlock
 {
-    float:left;
-    width:16.66%;
+    font-size:.9em;
+    line-height:1.6em;
+    margin:15px 70px;
+    width:640px;
 }
 
-.filmStrip .thumbInner
+.section .textBlock h3
 {
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-color: transparent;
-    background-image: url("../Images/FilmStrip/calgary-tower-192-120.jpg");
-    background-origin: padding-box;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top:7px solid #666;
-    cursor: pointer;
-    height:76px;
-    margin:0px 2px;
+    font-size:1.4em;
+    font-weight:normal;
+    margin-bottom:1em;
 }
 
-.filmStrip .thumb.selected .thumbInner
+.section .textBlock p
 {
-    border-top:7px solid #F00;
+    margin-bottom:2.5em;
 }
 
-.filmStrip .title
+.section .textBlock ul
 {
-    background:transparent;
-    
-    height:76px;
-    padding:10px 5px 0px 5px;
+    list-style:disc;
+    margin-bottom:2.5em;
+    padding:30px;
 }
 
-.filmStrip .title span
+.section .textBlock li
 {
-    visibility:hidden;
+    margin:2em 0px;
 }
 
-.filmStrip .title:hover
-{
-    background:rgba(0, 0, 0, 0.6);
-    visibility:visible;
-}
-
-.filmStrip .title:hover span
-{
-    visibility:visible;
-}
-
+/* *** FOOTER *********************************************** */
 #Footer
 {
     color:#FFF;

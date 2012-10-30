@@ -4,6 +4,19 @@
     <title>Privacy Policy :: Custom Metal Contracting Ltd.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/ui/ScalableBackgroundController.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(Body_Load);
+        
+        function Body_Load()
+        {
+            var jqueryHelper = $('.backgroundImageContainer');
+            var backgroundController = new sci.ui.ScalableBackgroundController();
+            backgroundController.Initialize(jqueryHelper.filter('.backgroundImageContainer').first());
+        }
+    </script>
 </head>
 <body>
     <div id="Header">
@@ -24,7 +37,25 @@
         </div>
     </div>
     <div id="MainContent">
-        <h1>Privacy Policy</h1>
+        <div class="backgroundImageContainer">
+            <img src="Images/custom-metal-exterior-sign.jpg" width="1200" height="797" />
+        </div>
+        <div class="content">
+            <h1>Privacy Policy</h1>
+            <div class="privacyPolicy section withTranslucentBackground">
+                <div class="textBlock">
+                    <h3>We collect the following kinds of information from our website visitors, but do not share or distribute this information with anyone.</h3>
+                    <h3>Personally Identifiable Information</h3>
+                    <p>Personally Identifiable Information is any information that identifies you. This includes your email address, or any other details that you supply voluntarily.</p>
+                    <p>We do not automatically obtain any Personally Identifiable Information. We collect Personally Identifiable Information (such as your name, address</p>
+                    <p>This information is kept strictly confidential and is not shared or distributed to anyone, and is used only for the purposes of contacting you directly upon your request.</p>
+                    <h3>Aggregate Information</h3>
+                    <p>Aggregate Information is anonymous data – such as your IP address (the unique number assigned to every computer on the internet), domain name (e.g. example.com), and web browser type (e.g. Internet Explorer or FireFox).</p>
+                    <p>Aggregate Information is collected in order to diagnose problems with the web server, and to assess the kinds of visitors this site receives in an effort to provide the best possible experience for website visitors.</p>
+                    <p>None of this data is Personally Identifiable Information. When you visit this website, you are anonymous and will remain that way unless you choose otherwise.</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="Footer">
         <ul class="navigation">

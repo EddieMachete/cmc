@@ -1,11 +1,6 @@
-.contact.section
+#MainContent .content .contact.section.withTranslucentBackground
 {
-    background: rgba(65, 65, 65, 0.9);
-    color:#FFF;
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC333333, endColorstr=#CC333333);
-    margin:65px 0px;
-    overflow:hidden;
-    padding-bottom:100px;
+    padding:0px 0px 100px 0px;
 }
 
 .contact.section h3
