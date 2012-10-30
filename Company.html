@@ -9,6 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
     <link href="Styles/Company.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/ui/ScalableBackgroundController.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(Body_Load);
+        
+        function Body_Load()
+        {
+            var jqueryHelper = $('.backgroundImageContainer');
+            var backgroundController = new sci.ui.ScalableBackgroundController();
+            backgroundController.Initialize(jqueryHelper.filter('.backgroundImageContainer').first());
+        }
+    </script>
 </head>
 <body>
     <div id="Header">
@@ -29,33 +42,40 @@
         </div>
     </div>
     <div id="MainContent">
-        <h1>Company</h1>
-        <div class="company">
-            <h3>Who we are</h3>
-            <p>
-                Custom Metal Contracting is a company of experts with design, manufacturing and installation capabilities second to none, boasting over 200 years of experience through our principle staff alone. The team at Custom Metal Contracting is much more than a service provider — we are a business partner. Working together with our clients, Custom Metal Contracting provides comprehensive support and solutions … from initial concept to final completion.
-            </p>
-            <h3>Service Offerings</h3>
-            <ul>
-                <li>Architectural Panel Systems</li>
-                <li>Custom Design &amp; Fabrication</li>
-                <li>Steel Deck/Siding</li>
-                <li>Standing Seam Roofing</li>
-            </ul>
-            <p>
-                Here at Custom Metal Contracting we are much more than a service provider — we are a business partner. Working together with our clients, Custom Metal Contracting provides comprehensive support and solutions … from initial concept to final completion. We are committed to understanding and adapting to the changing needs of clients and are constantly developing new methods, ideas and products to ensure long-term success.
-            </p>
-            <h3>Company Achievements</h3>
-            <h3 style="color:Red;">*Please list  3 – 4 company achievements</h3>
-            <ul>
-                <li>Metal Construction Association (MCA) Premium MCM Fabricator</li>
-                <li>Winner of Loreum Ipsum</li>
-                <li>Loreum Ipsum</li>
-            </ul>
-            <h3>History</h3>
-            <p>
-                Over the past thirty years, Custom Metal Contracting Ltd. has become a leader in the architectural metals industry, developing some of the most sophisticated comprehensive building envelope systems available. Since 1980, we have proved ourselves time and time again on high-profile projects through out North America and have become known as a &quot;one stop shop&quot; for both the building construction and architectural design industries.
-            </p>
+        <div class="backgroundImageContainer">
+            <img src="Images/Large/calgary-tower.jpg" width="1200" height="798" />
+        </div>
+        <div class="content">
+            <h1>Company</h1>
+            <div class="section withTranslucentBackground">
+                <div class="textBlock">
+                    <h3>Who we are</h3>
+                    <p>
+                        Custom Metal Contracting is a company of experts with design, manufacturing and installation capabilities second to none, boasting over 200 years of experience through our principle staff alone. The team at Custom Metal Contracting is much more than a service provider — we are a business partner. Working together with our clients, Custom Metal Contracting provides comprehensive support and solutions … from initial concept to final completion.
+                    </p>
+                    <h3>Service Offerings</h3>
+                    <ul>
+                        <li>Architectural Panel Systems</li>
+                        <li>Custom Design &amp; Fabrication</li>
+                        <li>Steel Deck/Siding</li>
+                        <li>Standing Seam Roofing</li>
+                    </ul>
+                    <p>
+                        Here at Custom Metal Contracting we are much more than a service provider — we are a business partner. Working together with our clients, Custom Metal Contracting provides comprehensive support and solutions … from initial concept to final completion. We are committed to understanding and adapting to the changing needs of clients and are constantly developing new methods, ideas and products to ensure long-term success.
+                    </p>
+                    <h3>Company Achievements</h3>
+                    <h3 style="color:Red;">*Please list  3 – 4 company achievements</h3>
+                    <ul>
+                        <li>Metal Construction Association (MCA) Premium MCM Fabricator</li>
+                        <li>Winner of Loreum Ipsum</li>
+                        <li>Loreum Ipsum</li>
+                    </ul>
+                    <h3>History</h3>
+                    <p>
+                        Over the past thirty years, Custom Metal Contracting Ltd. has become a leader in the architectural metals industry, developing some of the most sophisticated comprehensive building envelope systems available. Since 1980, we have proved ourselves time and time again on high-profile projects through out North America and have become known as a &quot;one stop shop&quot; for both the building construction and architectural design industries.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
     <div id="Footer">

@@ -169,12 +169,12 @@ ol
 {
     list-style:disc;
     margin-bottom:2.5em;
-    padding:30px;
+    padding-left:30px;
 }
 
 .section .textBlock li
 {
-    margin:2em 0px;
+    margin:.3em 0px;
 }
 
 /* *** FOOTER *********************************************** */
