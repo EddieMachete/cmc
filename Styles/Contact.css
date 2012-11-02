@@ -5,8 +5,7 @@
 
 .contact.section h3
 {
-    font-size:1.4em;
-    font-weight:normal;
+    margin-bottom:0px;
 }
 
 .contact.section .officeGroup
@@ -35,8 +34,6 @@
 .contact.section .officeGroup .office
 {
     float:left;
-    font-size:.8em;
-    line-height:1.6em;
     margin:2em 10px 0px 0px;
     width:250px;
 }
@@ -53,10 +50,11 @@
 
 .contact.section .officeGroup .office .name
 {
-    font-size:1.25em;
+    font-size:1.15em;
 }
 
-.contact.section .officeGroup .office .email
+.contact.section .officeGroup .office .email a
 {
     color:#F00;
+    text-decoration:none;
 }
