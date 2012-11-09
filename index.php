@@ -32,12 +32,12 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
 <body>
     <div id="Header">
         <div class="logo">
-            <a href="index.html"><img src="Images/Logo.png" width="164" height="103" /></a>
+            <a href="index.php"><img src="Images/Logo.png" width="164" height="103" /></a>
         </div>
         <div class="slogan">Building your legacy</div>
         <div class="mainNavigation">
             <ul>
-                <li class="selected"><a href="index.html">Home</a></li>
+                <li class="selected"><a href="index.php">Home</a></li>
                 <li><a href="Company.html">Company</a></li>
                 <li><a href="Systems.html">Systems</a></li>
                 <li><a href="Surfaces.html">Surfaces</a></li>
@@ -49,7 +49,7 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
     </div>
     <div id="MainContent">
         <div class="backgroundCarousel">
-            <div class="slide" <?php print($isMobile ? 'data-image-width="1200" data-image-height="727"' : 'data-image-width="1200" data-image-height="727"' ?> data-slide-duration="8000" data-slide="one">
+            <div class="slide" <?php print($isMobile ? 'data-image-width="1200" data-image-height="727"' : 'data-image-width="1200" data-image-height="727"'); ?> data-slide-duration="8000" data-slide="one">
                 <?php print($isMobile ? '<img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />' : '<img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
@@ -63,7 +63,7 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="798"' : 'data-image-width="1200" data-image-height="798"' ?> data-slide-duration="8000" data-slide="two">
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="798"' : 'data-image-width="1200" data-image-height="798"'); ?> data-slide-duration="8000" data-slide="two">
                 <?php print($isMobile ? '<img src="Images/Small/calgary-tower.jpg" width="1200" height="798" />' : '<img src="Images/Large/calgary-tower.jpg" width="1200" height="798" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
@@ -77,7 +77,7 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"' ?> data-slide-duration="8000" data-slide="three">
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"'); ?> data-slide-duration="8000" data-slide="three">
                 <?php print($isMobile ? '<img src="Images/Large/california-university.jpg" width="1200" height="797" />' : '<img src="Images/Large/california-university.jpg" width="1200" height="797" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
@@ -91,7 +91,7 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"' ?> data-slide-duration="8000" data-slide="four">
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"'); ?> data-slide-duration="8000" data-slide="four">
                 <?php print($isMobile ? '<img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />' : '<img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
@@ -105,7 +105,7 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"' ?> data-slide-duration="8000" data-slide="five">
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"'); ?> data-slide-duration="8000" data-slide="five">
                 <?php print($isMobile ? '<img src="Images/Large/science-centre.jpg" width="1200" height="900" />' : '<img src="Images/Large/science-centre.jpg" width="1200" height="900" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
@@ -119,7 +119,7 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"' ?> data-slide-duration="8000" data-slide="six">
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"'); ?> data-slide-duration="8000" data-slide="six">
                 <?php print($isMobile ? '<img src="Images/Large/teacher-union.jpg" width="1200" height="900" />' : '<img src="Images/Large/teacher-union.jpg" width="1200" height="900" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
