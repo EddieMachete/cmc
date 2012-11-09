@@ -1,3 +1,8 @@
+<?php
+include 'Mobile_Detect.php';
+$detect = new Mobile_Detect();
+$isMobile = $detect->isMobile() && !$detect->isTablet();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
@@ -44,8 +49,8 @@
     </div>
     <div id="MainContent">
         <div class="backgroundCarousel">
-            <div class="slide" data-image-width="1200" data-image-height="727" data-slide-duration="8000" data-slide="one">
-                <img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />
+            <div class="slide" <?php print($isMobile ? 'data-image-width="1200" data-image-height="727"' : 'data-image-width="1200" data-image-height="727"' ?> data-slide-duration="8000" data-slide="one">
+                <?php print($isMobile ? '<img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />' : '<img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">News & announcements</div>
@@ -58,8 +63,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" data-image-width="1200" data-image-height="798" data-slide-duration="8000" data-slide="two">
-                <img src="Images/Large/calgary-tower.jpg" width="1200" height="798" />
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="798"' : 'data-image-width="1200" data-image-height="798"' ?> data-slide-duration="8000" data-slide="two">
+                <?php print($isMobile ? '<img src="Images/Small/calgary-tower.jpg" width="1200" height="798" />' : '<img src="Images/Large/calgary-tower.jpg" width="1200" height="798" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Calgary Tower</div>
@@ -72,8 +77,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" data-image-width="1200" data-image-height="797" data-slide-duration="8000" data-slide="three">
-                <img src="Images/Large/california-university.jpg" width="1200" height="797" />
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"' ?> data-slide-duration="8000" data-slide="three">
+                <?php print($isMobile ? '<img src="Images/Large/california-university.jpg" width="1200" height="797" />' : '<img src="Images/Large/california-university.jpg" width="1200" height="797" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Metal cladding</div>
@@ -86,8 +91,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" data-image-width="1200" data-image-height="797" data-slide-duration="8000" data-slide="four">
-                <img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"' ?> data-slide-duration="8000" data-slide="four">
+                <?php print($isMobile ? '<img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />' : '<img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Awards</div>
@@ -100,8 +105,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" data-image-width="1200" data-image-height="900" data-slide-duration="8000" data-slide="five">
-                <img src="Images/Large/science-centre.jpg" width="1200" height="900" />
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"' ?> data-slide-duration="8000" data-slide="five">
+                <?php print($isMobile ? '<img src="Images/Large/science-centre.jpg" width="1200" height="900" />' : '<img src="Images/Large/science-centre.jpg" width="1200" height="900" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Telus Science Centre</div>
@@ -114,8 +119,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" data-image-width="1200" data-image-height="900" data-slide-duration="8000" data-slide="six">
-                <img src="Images/Large/teacher-union.jpg" width="1200" height="900" />
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"' ?> data-slide-duration="8000" data-slide="six">
+                <?php print($isMobile ? '<img src="Images/Large/teacher-union.jpg" width="1200" height="900" />' : '<img src="Images/Large/teacher-union.jpg" width="1200" height="900" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Custom metal contracting</div>
