@@ -1,0 +1,43 @@
+.details
+{
+    color: white;
+    margin:150px 120px 0px 120px;
+}
+
+.details .highlight
+{
+    background-color:#F00;
+    height:5px;
+    margin-bottom:5px;
+    width:35px;
+}
+
+.details .title
+{
+    font-size:65px;
+    font-weight:bold;
+    letter-spacing:-.9px;
+    line-height:55px;
+    padding-left:3px;
+    text-transform:uppercase;
+}
+
+.details .description
+{
+    font-size:15px;
+    line-height:20px;
+    margin:10px 0px;
+}
+
+.details .options
+{
+    font-size:15px;
+    line-height:30px;
+    margin:10px 0px;
+}
+
+.details .options li
+{
+    background:url(../Images/bullet-arrow.gif) no-repeat center left;
+    padding-left:20px;
+}

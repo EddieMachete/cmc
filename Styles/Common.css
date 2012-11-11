@@ -94,7 +94,7 @@ ol
     text-decoration:none;
 }
 
-#Header .mainNavigation li.selected a
+#Header .mainNavigation li.selected a, #Footer li.selected a
 {
     color:#CCC;
 }

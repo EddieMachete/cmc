@@ -7,21 +7,12 @@
     <meta name="distribution" content="Global" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
-    <link href="Styles/Company.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/UnderConstruction.css" rel="stylesheet" type="text/css" />
     <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/ResizeForMobile.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/ui/ScalableBackgroundController.js"></script>
-    <script language="javascript" type="text/javascript">
-        $(Body_Load);
-        
-        function Body_Load()
-        {
-            var jqueryHelper = $('.backgroundImageContainer');
-            var backgroundController = new sci.ui.ScalableBackgroundController();
-            backgroundController.Initialize(jqueryHelper.filter('.backgroundImageContainer').first());
-        }
-    </script>
+    <script language="javascript" type="text/javascript" src="Scripts/UnderConstruction.js"></script>
 </head>
 <body>
     <div id="Header">
@@ -46,7 +37,11 @@
             <img src="Images/Large/under-construction.jpg" width="1200" height="900" />
         </div>
         <div class="content">
-            <h1>Systems</h1>
+            <div class="details">
+                <div class="highlight"></div>
+                <div class="title">Under Construction</div>
+                <div class="description">Comming soon!</div>
+            </div>
         </div>
     </div>
     <div id="Footer">
