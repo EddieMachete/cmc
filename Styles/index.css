@@ -12,16 +12,16 @@ body
 
 .backgroundCarousel .slide
 {
-    left:0px;
+    left:0;
     position:absolute;
-    top:0px;
+    top:0;
 }
 
 .backgroundCarousel .slide img
 {
-    left:0px;
+    left:0;
     position:absolute;
-    top:0px;
+    top:0;
 }
 
 .backgroundCarousel .slide.hidden
@@ -33,10 +33,10 @@ body
 {
     color: white;
     display:none;
-    left:0px;
+    left:0;
     position:relative;
     /*text-shadow: 2px 2px #333;*/
-    top:0px;
+    top:0;
     /*width:450px;*/
 }
 
@@ -62,20 +62,31 @@ body
 {
     font-size:15px;
     line-height:20px;
-    margin:10px 0px;
+    margin:10px 0;
 }
 
 .backgroundCarousel .slide .details .options
 {
     font-size:15px;
     line-height:30px;
-    margin:10px 0px;
+    margin:10px 0;
 }
 
 .backgroundCarousel .slide .details .options li
 {
     background:url(../Images/bullet-arrow.gif) no-repeat center left;
     padding-left:20px;
+}
+
+.backgroundCarousel .slide .details .options a
+{
+    color:#FFF;
+    text-decoration:none;
+}
+
+.backgroundCarousel .slide .details .options a:hover
+{
+    text-decoration:underline;
 }
 
 .filmStrip
@@ -91,7 +102,7 @@ body
 .filmStripInner
 {
     background-color:#000;
-    bottom:0px;
+    bottom:0;
     /*height:81px;*/
     height:7px;
     overflow:hidden;
@@ -118,7 +129,7 @@ body
     border-top:7px solid #666;
     cursor: pointer;
     height:76px;
-    margin:0px 2px;
+    margin:0 2px;
 }
 
 .filmStrip .thumb.selected .thumbInner
@@ -131,7 +142,7 @@ body
     background:transparent;
     
     height:76px;
-    padding:10px 5px 0px 5px;
+    padding:10px 5px 0 5px;
 }
 
 .filmStrip .title span
