@@ -49,7 +49,7 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
     </div>
     <div id="MainContent">
         <div class="backgroundCarousel">
-            <div class="slide" <?php print($isMobile ? 'data-image-width="1200" data-image-height="727"' : 'data-image-width="1200" data-image-height="727"'); ?> data-slide-duration="8000" data-slide="one">
+            <div class="slide newsAndAnnouncements" <?php print($isMobile ? 'data-image-width="1200" data-image-height="727"' : 'data-image-width="1200" data-image-height="727"'); ?> data-slide-duration="8000" data-slide="one">
                 <?php print($isMobile ? '<img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />' : '<img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>

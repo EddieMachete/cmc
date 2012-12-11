@@ -31,7 +31,7 @@ body
 
 .backgroundCarousel .slide .details
 {
-    color: white;
+    color:#FFF;
     display:none;
     left:0;
     position:relative;
@@ -87,6 +87,13 @@ body
 .backgroundCarousel .slide .details .options a:hover
 {
     text-decoration:underline;
+}
+
+.backgroundCarousel .newsAndAnnouncements .title,
+.backgroundCarousel .newsAndAnnouncements .description,
+.backgroundCarousel .newsAndAnnouncements .details .options a
+{
+    color:#232227;
 }
 
 .filmStrip
