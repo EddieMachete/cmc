@@ -1,0 +1,33 @@
+.section .news
+{
+    margin: 15px 70px;
+    width: 640px;
+}
+
+.section .news p
+{
+    margin: 1em 10px 1em 23px;
+}
+
+.section .news li
+{
+    margin-bottom:.5em;
+}
+
+.section .news li a
+{
+    color:#F00;
+}
+
+.section .news .date
+{
+    background:url(../Images/bullet-arrow.gif) no-repeat 5px center;
+    cursor:pointer;
+    font-size:1.1em;
+    padding-left:23px;
+}
+
+.section .news .current .date
+{
+    background:url(../Images/bullet-arrow-down.gif) no-repeat left center;
+}

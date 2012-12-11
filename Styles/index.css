@@ -91,7 +91,7 @@ body
 
 .filmStrip
 {
-    bottom:0px;
+    bottom:0;
     color:#FFF;
     height:81px;
     overflow:hidden;
