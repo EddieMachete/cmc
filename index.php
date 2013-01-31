@@ -65,7 +65,7 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="798"' : 'data-image-width="1200" data-image-height="798"'); ?> data-slide-duration="8000" data-slide="two">
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="798"' : 'data-image-width="1200" data-image-height="798"'); ?> data-slide-duration="10000" data-slide="two">
                 <?php print($isMobile ? '<img src="Images/Large/calgary-tower.jpg" width="1200" height="798" />' : '<img src="Images/Large/calgary-tower.jpg" width="1200" height="798" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
@@ -79,8 +79,8 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"'); ?> data-slide-duration="8000" data-slide="three">
-                <?php print($isMobile ? '<img src="Images/Large/california-university.jpg" width="1200" height="797" />' : '<img src="Images/Large/california-university.jpg" width="1200" height="797" />'); ?>
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="746"' : 'data-image-width="1200" data-image-height="746"'); ?> data-slide-duration="10000" data-slide="three">
+                <?php print($isMobile ? '<img src="Images/Large/uc-irvine-medical-center.jpg" width="1200" height="746" />' : '<img src="Images/Large/uc-irvine-medical-center.jpg" width="1200" height="746" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Metal roofing and cladding</div>
@@ -88,12 +88,12 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                         This long lasting maintenance free solution is proven economical.<br/>High quality, light weight roofing system is fabricated on-site to fit the specific dimensions, eliminate seams and help reduce structural framing costs.
                     </div>
                     <ul class="options">
-                        <li><a href="Portfolio.html">View California University in Portfolio</a></li>
+                        <li><a href="Portfolio.html">View UC Irvine Medical Center in Portfolio</a></li>
                         <li><a href="Surfaces.html">View CP &ndash; 4mm Composite Aluminum Panel system series 20</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"'); ?> data-slide-duration="8000" data-slide="four">
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"'); ?> data-slide-duration="10000" data-slide="four">
                 <?php print($isMobile ? '<img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />' : '<img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
@@ -103,12 +103,12 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </div>
                     <ul class="options">
                         <li><a href="Portfolio.html">View Alberta Childrens Hospital in Portfolio</a></li>
-                        <li><a href="Surfaces.html">View 7/8&quot; corrugated cladding used on the Hospital.</a></li>
+                        <li><a href="Surfaces.html">View AP&ndash;Series Aluminum Panel used on the Hospital.</a></li>
                         <li><a href="NewsAndAnnouncements.html">View Awards in News & Announcements Section</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"'); ?> data-slide-duration="8000" data-slide="five">
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"'); ?> data-slide-duration="10000" data-slide="five">
                 <?php print($isMobile ? '<img src="Images/Large/science-centre.jpg" width="1200" height="900" />' : '<img src="Images/Large/science-centre.jpg" width="1200" height="900" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
@@ -122,7 +122,7 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"'); ?> data-slide-duration="8000" data-slide="six">
+            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"'); ?> data-slide-duration="10000" data-slide="six">
                 <?php print($isMobile ? '<img src="Images/Large/teacher-union.jpg" width="1200" height="900" />' : '<img src="Images/Large/teacher-union.jpg" width="1200" height="900" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
