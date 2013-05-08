@@ -17,16 +17,11 @@
 
 .content .downloads .header h3
 {
-    /*background-color:#000;*/
-    /*color:#FFF;*/
-    /*float:left;*/
     font-size:2.7em;
     font-weight:bold;
     line-height:1.5em;
-    /*margin-left:40px;*/
     padding:0 10px;
     text-transform:uppercase;
-    /*width:380px;*/
 }
 
 .content .downloads .header h3,
@@ -39,6 +34,7 @@
     padding:0 10px;
     width:380px;
 }
+
 .content .downloads .body
 {
     margin-bottom:10px;
@@ -69,6 +65,11 @@
     width:100px;
 }
 
+.content .downloads .body .information .name
+{
+    width:130px;
+}
+
 .content .downloads .body .vertical .name
 {
     background:url(../Images/bullet-arrow.gif) no-repeat left center;
@@ -79,6 +80,11 @@
     width:220px;
 }
 
+.content .downloads .body .information .description
+{
+    width:190px;
+}
+
 .content .downloads .body a
 {
     color:#F03;
@@ -87,5 +93,5 @@
 
 .content .downloads .body a:hover
 {
-    text-decoration:underline;
+    color:#FFF;
 }
