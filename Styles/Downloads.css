@@ -1,0 +1,91 @@
+.content .downloads
+{
+    margin-bottom:60px;
+    overflow:hidden;
+}
+
+.content .downloads .header,
+.content .downloads .body
+{
+    overflow:hidden;
+}
+
+.content .downloads .header
+{
+    border-bottom:solid 4px #F00;
+}
+
+.content .downloads .header h3
+{
+    /*background-color:#000;*/
+    /*color:#FFF;*/
+    /*float:left;*/
+    font-size:2.7em;
+    font-weight:bold;
+    line-height:1.5em;
+    /*margin-left:40px;*/
+    padding:0 10px;
+    text-transform:uppercase;
+    /*width:380px;*/
+}
+
+.content .downloads .header h3,
+.content .downloads .body ul
+{
+    background-color:#000;
+    color:#FFF;
+    float:left;
+    margin:0 0 0 40px;
+    padding:0 10px;
+    width:380px;
+}
+.content .downloads .body
+{
+    margin-bottom:10px;
+}
+
+.content .downloads .header .details,
+.content .downloads .body .details
+{
+    margin-left:60px;
+}
+
+.content .downloads .body span,
+.content .downloads .body a
+{
+    display:inline-block;
+}
+
+.content .downloads .body li
+{
+    font-size:1.1em;
+    margin:1em 0;
+}
+
+.content .downloads .body .name
+{
+    font-weight:bold;
+    padding-left:20px;
+    width:100px;
+}
+
+.content .downloads .body .vertical .name
+{
+    background:url(../Images/bullet-arrow.gif) no-repeat left center;
+}
+
+.content .downloads .body .description
+{
+    width:220px;
+}
+
+.content .downloads .body a
+{
+    color:#F03;
+    text-decoration:none;
+}
+
+.content .downloads .body a:hover
+{
+    text-decoration:underline;
+}
