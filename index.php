@@ -66,16 +66,19 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                 </div>
             </div>
             <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="798"' : 'data-image-width="1200" data-image-height="798"'); ?> data-slide-duration="10000" data-slide="two">
-                <?php print($isMobile ? '<img src="Images/Large/calgary-tower.jpg" width="1200" height="798" />' : '<img src="Images/Large/calgary-tower.jpg" width="1200" height="798" />'); ?>
+                <?php print($isMobile ? '<img src="Images/Large/airport-control-tower.jpg" width="1200" height="798" />' : '<img src="Images/Large/airport-control-tower.jpg" width="1200" height="798" />'); ?>
                 <div class="details">
                     <div class="highlight"></div>
-                    <div class="title">Calgary Tower</div>
+                    <div class="title">Airport Control Tower</div>
                     <div class="description">
-                        This Iconic local landmark is a proud piece in our vast portfolio.<br/>It is recognizable worldwide and identifies the &quot;Heart of the New West&quot;.
+                        The newest addition to Calgary&squot;s already impressive skyline stands over 300 ft high.<br />
+                        A brand new state of the art Control Tower featuring some 28,000 square feet of our unsurpassed rainscreen panel system,
+                        this system was designed, manufactured and installed over the winter months, by Custom Metal,
+                        in one of the most aggressive climates in North America.
                     </div>
                     <ul class="options">
-                        <li><a href="Portfolio.html">View the Calgary Tower</a></li>
-                        <li><a href="Surfaces.html">View 3.25 mm AP Rainscreen Aluminum panel system as manufactured, Supplied and Installed by Custom Metal.</a></li>
+                        <li><a href="Portfolio.html">View Airport Control Tower.</a></li>
+                        <li><a href="Surfaces.html">View 4mm Reynobond Composite Panel System.</a></li>
                     </ul>
                 </div>
             </div>
