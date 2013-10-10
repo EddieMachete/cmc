@@ -1,0 +1,57 @@
+.content-header {
+    position: relative;
+}
+
+.map-container {
+    background-color: Red;
+    display: none;
+    overflow: hidden;
+    position:absolute;
+    top: 0;
+    width:100%;
+    z-index: 10;
+}
+
+.map-canvas {
+    /*display: inline-block;*/
+    float: left;
+    height: 300px;
+    margin: 10px;
+    width: 66%;
+}
+
+.map-container .categories {
+    border-top:solid 1px #000;
+    /*display: inline-block;*/
+    float: left;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 31%;
+}
+
+.map-container .categories li {
+    border-bottom: solid 1px #000;
+    cursor: pointer;
+}
+
+.map-container .categories .selected {
+    color: #FFF;
+}
+
+.map-button {
+    background-color: transparent;
+    bottom: 0;
+    cursor: pointer;
+    line-height: 2em;
+    padding: 0 10px;
+    position: absolute;
+    right: 20px;
+}
+
+.map-button.active {
+    background-color: Red;
+}
+
+.gm-style .gm-style-iw h2 {
+    font-weight: normal;
+}

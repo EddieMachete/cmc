@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Edmonton International Airport :: Custom Metal Contracting Ltd.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta name="distribution" content="Global" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Styles/Common.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/index.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/ProjectMap.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/PortfolioProject.css" rel="stylesheet" type="text/css" />
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script language="javascript" type="text/javascript" src="../Scripts/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../Scripts/ResizeForMobile.js"></script>
+    <script language="javascript" type="text/javascript" src="../Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="../Scripts/sci/Calculations.js"></script>
+    <script language="javascript" type="text/javascript" src="../Scripts/sci/cmc/ProjectList.js"></script>
+    <script language="javascript" type="text/javascript" src="../Scripts/sci/cmc/MapStyles.js"></script>
+    <script language="javascript" type="text/javascript" src="../Scripts/sci/cmc/ProjectMap.js"></script>
+    <script language="javascript" type="text/javascript" src="../Scripts/sci/cmc/PortfolioProjectController.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(Body_Load);
+        
+        function Body_Load()
+        {
+            var jqueryHelper = $('.backgroundCarousel');
+            var carouselController = new sci.cmc.PortfolioProjectController();
+            carouselController.Initialize(jqueryHelper.filter('.backgroundCarousel').first());
+        }
+    </script>
+</head>
+<body>
+    <div id="Header">
+        <div class="logo">
+            <a href="index.php"><img src="../Images/Logo.png" width="164" height="103" /></a>
+        </div>
+        <div class="slogan">Building your legacy</div>
+        <div class="mainNavigation">
+            <ul>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../Company.html">Company</a></li>
+                <li><a href="../Systems.html">Systems</a></li>
+                <li><a href="../Surfaces.html">Surfaces</a></li>
+                <li class="selected"><a href="../Portfolio.html">Portfolio</a></li>
+                <li><a href="../Downloads.html">Downloads</a></li>
+                <li><a href="../Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="MainContent">
+        <div class="content-header" data-controller="PortfolioProject" data-name="ContentHeader">
+            <div class="map-button" data-controller="ProjectMap" data-name="MapButton">Browse Projects by Location</div>
+            <h1>Portfolio</h1>
+        </div>
+        <div class="backgroundCarousel">
+            <div class="map-container" data-controller="ProjectMap" data-name="MapContainer">
+                <div class="map-canvas" data-controller="ProjectMap" data-name="MapCanvas"></div>
+                <ul class="categories">
+                    <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="All">All categories</li>
+                    <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Airports">Airports</li>
+                    <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Institutional">Institutional</li>
+                    <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Healthcare">Healthcare</li>
+                    <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Commercial">Commercial</li>
+                    <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Government">Government</li>
+                    <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Residential">Residential</li>
+                </ul>
+            </div>
+            <div class="slides">
+                <div class="slide newsAndAnnouncements" data-image-width="1200" data-image-height="727" data-slide-duration="8000" data-slide="one">
+                    <img src="../Images/Large/hotel-alma.jpg" width="1200" height="727" />
+                </div>
+                <div class="slide hidden" data-image-width="1200" data-image-height="798" data-slide-duration="10000" data-slide="two">
+                    <img src="../Images/Large/airport-control-tower.jpg" width="1200" height="798" />
+                </div>
+                <div class="slide hidden" data-image-width="1200" data-image-height="746" data-slide-duration="10000" data-slide="three">
+                    <img src="../Images/Large/uc-irvine-medical-center.jpg" width="1200" height="746" />
+                </div>
+            </div>
+            <div class="details">
+                <ul class="project-navigation">
+                    <li class="previous">PREV</li>
+                    <li class="all">VIEW ALL</li>
+                    <li class="next">NEXT</li>
+                </ul>
+                <ul class="information">
+                    <li>
+                        <strong>Project</strong>
+                        <span>Edmonton International Airport</span>
+                    </li>
+                    <li>
+                        <strong>Location</strong>
+                        <span>Edmonton</span>
+                    </li>
+                    <li>
+                        <strong>Architect</strong>
+                        <span>Macabi</span>
+                    </li>
+                    <li>
+                        <strong>Year</strong>
+                        <span>2009</span>
+                    </li>
+                    <li>
+                        <strong>Product</strong>
+                        <span>Alucobond</span>
+                    </li>
+                </ul>
+                <div class="map" data-controller="PortfolioProject" data-name="Map" data-latitude="53.308211" data-longitude="-113.588143" data-title="Edmonton International Airport">
+                    <div class="google-map"></div>
+                </div>
+            </div>
+        </div>
+        <div class="filmStrip">
+            <div class="control left" data-controller="PortfolioProject" data-name="LeftButton">&lt;</div>
+            <div class="control right" data-controller="PortfolioProject" data-name="RightButton">&gt;</div>
+            <div class="images" data-controller="PortfolioProject" data-name="ThumbnailContainer">
+                <ul class="container" style="width: 219px;" data-controller="PortfolioProject" data-name="Thumbnails">
+                    <li style="background-image: url('../Images/Large/hotel-alma.jpg');" data-controller="PortfolioProject" data-type="Thumbnail" data-slide="one"></li>
+                    <li style="background-image: url('../Images/Large/airport-control-tower.jpg')" data-controller="PortfolioProject" data-type="Thumbnail" data-slide="two"></li>
+                    <li style="background-image: url('../Images/Large/uc-irvine-medical-center.jpg')" data-controller="PortfolioProject" data-type="Thumbnail" data-slide="three"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="Footer">
+        <ul class="navigation">
+            <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+            <li><a href="Disclaimers.html">Disclaimers</a></li>
+            <li><a href="GeneralTermsAndConditions.html">General Terms and Conditions</a></li>
+            <li><a href="NewsAndAnnouncements.html">News and Announcements</a></li>
+            <li><a href="SiteMap.html">Site Map</a></li>
+        </ul>
+        <div class="copyright">&copy; 2012 Custom Metal Contracting Ltd.  All rights reserved.</div>
+    </div>
+    <div id="Output">output</div>
+</body>
+</html>

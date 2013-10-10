@@ -1,26 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<!DOCTYPE HTML>
+<html>
 <head>
-    <title>Portfolio :: Custom Metal Contracting Ltd.</title>
+    <title>Contact :: Custom Metal Contracting Ltd.</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="en-us" />
     <meta name="distribution" content="Global" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
-    <link href="Styles/UnderConstruction.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Shared/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/ProjectMap.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Portfolio.css" rel="stylesheet" type="text/css" />
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
-    <script language="javascript" type="text/javascript" src="Scripts/ResizeForMobile.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
-    <script language="javascript" type="text/javascript" src="Scripts/sci/ui/ScalableBackgroundController.js"></script>
-    <script language="javascript" type="text/javascript" src="Scripts/UnderConstruction.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/cmc/MapStyles.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/cmc/ProjectList.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/cmc/ProjectMap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/cmc/PortfolioProjectCollectionController.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/cmc/PortfolioScreenController.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/Portfolio.js"></script>
 </head>
 <body>
-    <div id="Header">
+    <div class="page-header">
         <div class="logo">
             <a href="index.php"><img src="Images/Logo.png" width="164" height="103" /></a>
         </div>
         <div class="slogan">Building your legacy</div>
-        <div class="mainNavigation">
+        <div class="controls">
+            <div class="main-navigation-toggle" data-controller="Screen" data-name="MainNavigationToggle">[]</div>
+        </div>
+        <div class="main-navigation hidden" data-controller="Screen" data-name="MainNavigation">
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="Company.html">Company</a></li>
@@ -32,15 +40,591 @@
             </ul>
         </div>
     </div>
-    <div id="MainContent">
-        <div class="backgroundImageContainer">
-            <img src="Images/Large/under-construction.jpg" width="1200" height="900" />
-        </div>
+    <div class="main-content">
         <div class="content">
-            <div class="details">
-                <div class="highlight"></div>
-                <div class="title">Under Construction</div>
-                <div class="description">Coming soon!</div>
+            <div class="content-header">
+                <div class="map-button" data-controller="ProjectMap" data-name="MapButton">Browse Projects by Location</div>
+                <h1>Portfolio</h1>
+            </div>
+            <div class="section">
+                <div class="map-container" data-controller="ProjectMap" data-name="MapContainer">
+                    <div class="map-canvas" data-controller="ProjectMap" data-name="MapCanvas"></div>
+                    <ul class="categories">
+                        <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="All">All categories</li>
+                        <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Airports">Airports</li>
+                        <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Institutional">Institutional</li>
+                        <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Healthcare">Healthcare</li>
+                        <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Commercial">Commercial</li>
+                        <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Government">Government</li>
+                        <li data-controller="ProjectMap" data-type="MapMenuItem" data-name="Residential">Residential</li>
+                    </ul>
+                </div>
+                <ul class="projects">
+                    <li data-controller="Portfolio" data-name="ProjectCollection">
+                        <div class="details">
+                            <div class="category">Airports</div>
+                            <div class="description">Featured projects</div>
+                            <div class="view-all" data-controller="ProjectCollection" data-name="ViewAllButton">View all</div>
+                        </div>
+                        <div class="status" data-controller="ProjectCollection" data-name="Status"></div>
+                        <ul class="featured">
+                            <li>
+                                <a href="PortfolioProjects/EdmontonAirport.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Edmonton Airport</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/BoiseAirport.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Boise Airport</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/CalgaryControlTower.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Air Traffic Control Tower</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="all" data-controller="ProjectCollection" data-name="AllProjects">
+                            <ul>
+                                <li>
+                                    <a href="PortfolioProjects/EdmontonAirport.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Edmonton Airport</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/BoiseAirport.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Boise Airport</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/CalgaryControlTower.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Air Traffic Control Tower</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-controller="Portfolio" data-name="ProjectCollection">
+                        <div class="details">
+                            <div class="category">Institutional</div>
+                            <div class="description">Featured projects</div>
+                            <div class="view-all" data-controller="ProjectCollection" data-name="ViewAllButton">View all</div>
+                        </div>
+                        <div class="status" data-controller="ProjectCollection" data-name="Status"></div>
+                        <ul class="featured">
+                            <li>
+                                <a href="PortfolioProjects/AlbertaTeacherAssociation.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Alberta Teacher Association</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/BeverlyHillsHighSchool.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Beverly Hills High School</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/CainLibrary.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Cain Library</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="all" data-controller="ProjectCollection" data-name="AllProjects">
+                            <ul>
+                                <li>
+                                    <a href="PortfolioProjects/AlbertaTeacherAssociation.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Alberta Teacher Association</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/BeverlyHillsHighSchool.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Beverly Hills High School</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/CainLibrary.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Cain Library</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/CaliforniaStateUniversityLa.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>California State University LA</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/SouthGateHighSchool.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>South Gate High School</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/Sundance.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Sundance</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/SaitPolytechnin.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Sait Polytechnin</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/MountRoyal.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Mount Royal</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/HolyFamilyCathedral.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Holy Family Catholic Church Saskatoon</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/JaymanMaster.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Jayman Master</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-controller="Portfolio" data-name="ProjectCollection">
+                        <div class="details">
+                            <div class="category">Healthcare</div>
+                            <div class="description">Featured projects</div>
+                            <div class="view-all" data-controller="ProjectCollection" data-name="ViewAllButton">View all</div>
+                        </div>
+                        <div class="status" data-controller="ProjectCollection" data-name="Status"></div>
+                        <ul class="featured">
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Children's Hospital</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>LA Orthopedic Hospital Out Patient</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Red Deer Hospital</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="all" data-controller="ProjectCollection" data-name="AllProjects">
+                            <ul>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Children's Hospital</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>LA Orthopedic Hospital Out Patient</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Red Deer Hospital</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>UCI Medical</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Irvine Heritage Medical Centre</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-controller="Portfolio" data-name="ProjectCollection">
+                        <div class="details">
+                            <div class="category">Commercial</div>
+                            <div class="description">Featured projects</div>
+                            <div class="view-all" data-controller="ProjectCollection" data-name="ViewAllButton">View all</div>
+                        </div>
+                        <div class="status" data-controller="ProjectCollection" data-name="Status"></div>
+                        <ul class="featured">
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>BMO</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Edmonton Accura</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Calgary Audi</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="all" data-controller="ProjectCollection" data-name="AllProjects">
+                            <ul>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>BMO</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Edmonton Accura</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Calgary Audi</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Community Savings South Hill Branch</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Hotel Alma</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Intervisual</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Livingston International</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Orange County Coroner</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Techmation Electric &amp; Controls ltd</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Telus World of Science</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>W Hotel and Residence LA</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-controller="Portfolio" data-name="ProjectCollection">
+                        <div class="details">
+                            <div class="category">Government</div>
+                            <div class="description">Featured projects</div>
+                            <div class="view-all" data-controller="ProjectCollection" data-name="ViewAllButton">View all</div>
+                        </div>
+                        <div class="status" data-controller="ProjectCollection" data-name="Status"></div>
+                        <ul class="featured">
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Project: Calgary Drop Centre</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Calgary Tower</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Edmonton Police Station</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="all" data-controller="ProjectCollection" data-name="AllProjects">
+                            <ul>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Project: Calgary Drop Centre</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Calgary Tower</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Edmonton Police Station</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>LA Crime Lab</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>LA Regional Transportation  Los Angeles Reginal Transportation</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Nose Creek</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>New Admination Bldg &amp; Public Works Facility</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Provincial Archives</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Salvation Army</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Signal Hill Fire Station No. 33</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-controller="Portfolio" data-name="ProjectCollection">
+                        <div class="details">
+                            <div class="category">Residential</div>
+                            <div class="description">Featured projects</div>
+                            <div class="view-all" data-controller="ProjectCollection" data-name="ViewAllButton">View all</div>
+                        </div>
+                        <div class="status" data-controller="ProjectCollection" data-name="Status"></div>
+                        <ul class="featured">
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Orange Lofts</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Sasso Condo</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PortfolioProjects/.html">
+                                    <img width="150" height="100" src="Images/Logo.png" />
+                                    <div class="title">
+                                        <span>Sunset and Vine Tower</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="all" data-controller="ProjectCollection" data-name="AllProjects">
+                            <ul>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Orange Lofts</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Sasso Condo</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="PortfolioProjects/.html">
+                                        <img width="150" height="100" src="Images/Logo.png" />
+                                        <div class="title">
+                                            <span>Sunset and Vine Tower</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -54,5 +638,6 @@
         </ul>
         <div class="copyright">&copy; 2012 Custom Metal Contracting Ltd.  All rights reserved.</div>
     </div>
+    <div id="Output">output</div>
 </body>
 </html>

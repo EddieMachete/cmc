@@ -1,0 +1,104 @@
+.main-content .content .section {
+    color: #000;
+    margin: 0;
+    position: relative;
+}
+
+.main-content .projects {
+    /*max-width:960px;*/
+}
+
+@media(min-width:980px) {
+    .main-content .projects li {
+        background-color:#666;
+        border-bottom:solid 1px #FFF;
+        overflow:hidden;
+    }
+    
+    .main-content .projects .details,
+    .main-content .projects .status {
+        float:left;
+    }
+    
+    .main-content .projects .details {
+        text-align:right;
+        width:295px;
+    }
+    
+    .main-content .projects .details .category {
+        color:#FFF;
+        font-size:1.5em;
+        margin-top:.5em;
+    }
+    
+    .main-content .projects .details .description {
+        color:#CCC;
+    }
+    
+    .main-content .projects .details .view-all {
+        color:#FFF;
+        cursor: pointer;
+        margin-top:.5em;
+    }
+    
+    .main-content .projects .status {
+        background:url(../Images/Portfolio/folio_arrow.png) no-repeat center;
+        cursor: pointer;
+        height:100px;
+        width:107px;
+    }
+    
+    .main-content .projects .expanded .status {
+        background:url(../Images/Portfolio/folio_arrow2.png) no-repeat center;
+        cursor: pointer;
+        height:100px;
+        width:107px;
+    }
+    
+    .main-content .projects .featured {
+        overflow:hidden;
+    }
+    
+    .main-content .projects .featured li,
+    .main-content .projects .all li {
+        background-color:transparent;
+        border:solid 1px #FFF;
+        float:left;
+        height: 100px;
+        margin:7px 7px;
+        position:relative;
+        width:150px;
+    }
+    
+    .main-content .projects .featured li .title,
+    .main-content .projects .all li .title {
+        background-color: #000;
+        background: rgba(0, 0, 0, 0.6);
+        bottom: 0;
+        color: #FFF;
+        line-height: 1.5em;
+        position: absolute;
+        text-align: right;
+        width: 100%;
+    }
+    
+    .main-content .projects .featured li .title span,
+    .main-content .projects .all li .title span {
+        display: block;
+        font-size: .8em;
+        line-height: 1.2em;
+        margin: 5px 10px;
+    }
+    
+    .main-content .projects .all {
+        background-color:#000;
+        display:none;
+        clear:both;
+        overflow:hidden;
+    }
+    
+    .main-content .projects .all ul {
+        margin:20px 0 20px 70px;
+        overflow:hidden;
+    }
+}

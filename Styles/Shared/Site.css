@@ -1,0 +1,262 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+
+body
+{
+    background-color:#1B2235;
+    font-family:"Calibri", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    background: rgba(255, 255, 255, 0.4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33FFFFFF, endColorstr=#33FFFFFF);
+    font-size:2.5em;
+    font-weight:normal;
+    line-height:1.1em;
+    padding:0 20px;
+    text-transform:uppercase;
+}
+
+img {
+    border:none;
+}
+
+ul {
+    list-style:none;
+}
+
+.hidden {
+    display:none;
+}
+
+.page-header {
+    overflow:hidden;
+}
+
+.page-header .logo {
+    float:left;
+}
+
+.page-header .logo img {
+    height:auto;
+    width:60px;
+}
+
+.page-header .slogan {
+    display:none;
+}
+
+.page-header .controls {
+    color:#FFF;
+}
+
+.main-navigation {
+    background-color:#232227;
+    clear:both;
+    text-transform:uppercase;
+}
+    
+.page-header .main-navigation a {
+    color:#FFF;
+    display:block;
+    line-height:2.2em;
+    padding:0 .5em;
+    text-decoration:none;
+}
+
+.page-header .controls {
+    text-align:right;
+}
+
+@media(min-width:980px) {
+    
+    ol {
+        padding-left:40px;
+    }
+    
+    #Output
+    {
+        background-color:#FFF;
+        display:none;
+        position:absolute;
+        top:0;
+        right:0;
+        z-index:2;
+    }
+    
+    .page-header .logo {
+        margin:20px 0 0 10px;
+    }
+    
+    .page-header .logo img {
+        width:164px;
+    }
+    
+    .page-header .slogan {
+        color:#666;
+        display:block;
+        float:right;
+        font-size:2em;
+        font-style:italic;
+        font-weight:bold;
+        margin:5px 10px;
+        text-transform:uppercase;
+    }
+    
+    .page-header .main-navigation {
+        background-color:#232227;
+        clear:none;
+        margin-top:95px;/*70px;*/
+    }
+    
+    .page-header .main-navigation.hidden {
+        display:block;
+    }
+    
+    .page-header .main-navigation ul
+    {
+        overflow:hidden;
+    }
+    
+    .page-header .main-navigation li
+    {
+        float:left;
+    }
+    
+    .page-header .main-navigation a {
+        color:#FFF;
+        display:inline;
+        line-height:2.2em;
+        padding:.5em .5em;
+    }
+    
+    .page-header .main-navigation li.selected a, #Footer li.selected a
+    {
+        color:#CCC;
+    }
+    
+    .page-header .main-navigation a:hover
+    {
+        text-decoration:underline;
+    }
+    
+    .page-header .main-navigation-toggle {
+        display:none;
+    }
+    
+    .main-content
+    {
+        clear:both;
+        position:relative;
+    }
+    
+    .main-content .content
+    {
+        overflow:hidden;
+    }
+    
+    /* *** Background Image Container ****************************** */
+    .backgroundImageContainer
+    {
+        left:0;
+        overflow:hidden;
+        position:absolute;
+        top:0;
+        width:100%;
+        z-index:-1;
+    }
+    
+    .backgroundImageContainer img
+    {
+        position:absolute;
+    }
+    
+    /* *** TEXT BLOCK *********************************************** */
+    .main-content .content .section
+    {
+        color:#FFF;
+        margin:65px 0;
+        overflow:hidden;
+    }
+    
+    .main-content .content .section.withTranslucentBackground
+    {
+        background: rgba(65, 65, 65, 0.9);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC333333, endColorstr=#CC333333);
+        padding:0 0 30px 0;
+    }
+    
+    .section
+    {
+        font-size:.9em;
+        line-height:1.6em;
+    }
+    
+    .section h3
+    {
+        font-size:1.4em;
+        font-weight:normal;
+        margin-bottom:.5em;
+    }
+    
+    .section .textBlock
+    {
+        margin:15px 70px;
+        width:640px;
+    }
+    
+    .section .textBlock p
+    {
+        margin-bottom:1em;
+    }
+    
+    .section .textBlock ul
+    {
+        list-style:disc;
+        margin-bottom:1em;
+        padding-left:30px;
+    }
+    
+    .section .textBlock li
+    {
+        margin:.1em 0;
+    }
+    
+    /* *** FOOTER *********************************************** */
+    #Footer
+    {
+        color:#FFF;
+        font-size:14px;
+        line-height:10px;
+    }
+    
+    #Footer a
+    {
+        color:#FFF;
+    }
+    
+    #Footer .navigation
+    {
+        background-color:#232227;
+        overflow:hidden;
+    }
+    
+    #Footer .navigation li
+    {
+        float:left;
+    }
+    
+    #Footer .navigation a
+    {
+        line-height:2em;
+        padding:0 7px;
+    }
+    
+    #Footer .copyright
+    {
+        clear:both;
+        padding:3px 7px 5px 7px;
+    }
+}

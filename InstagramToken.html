@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Portfolio :: Custom Metal Contracting Ltd.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta name="distribution" content="Global" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/UnderConstruction.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(Body_Load);
+        
+        function Body_Load(e) {
+            GetInstagramStream();
+            
+            function GetInstagramStream() {
+                // https://api.instagram.com/oauth/authorize/?client_id=0256baf633594dabb57c911afb536a70&redirect_uri=http://www.custommetal.ab.ca/cmc/InstagramToken.html&response_type=code
+                var code = GetURLParameter('code');
+                
+                $('#code').val(code);
+            }
+            
+            function InstagramSuccess(data) {
+                debugger;
+                $('body').append('<div style="color:White;">' + data.access_token + '</div>');
+                alert(data.access_token);
+            }
+            
+            function GetURLParameter(name) {
+                return decodeURI(
+                    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+                );
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="https://api.instagram.com/oauth/access_token" method="POST">
+        <div>
+            <input type="text" id="client_id" name="client_id" value="0256baf633594dabb57c911afb536a70" />
+        </div>
+        <div>
+            <input type="text" id="client_secret" name="client_secret" value="5a2a2752d5d346418880a63700c9e61f" />
+        </div>
+        <div>
+            <input type="text" id="grant_type" name="grant_type" value="authorization_code" />
+        </div>
+        <div>
+            <input type="text" id="redirect_uri" name="redirect_uri" value="http://www.custommetal.ab.ca/cmc/InstagramToken.html" />
+        </div>
+        <div>
+            <input type="text" id="code" name="code" value="" />
+        </div>
+        <div>
+            <input type="text" id="format" name="format" value="json" />
+        </div>
+        <div>
+            <input type="submit" value="Get me my code" />
+        </div>
+    </form>
+</body>
+</html>

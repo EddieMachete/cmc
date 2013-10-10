@@ -1,0 +1,115 @@
+.map-container {
+    z-index: 11;
+}
+
+.filmStrip {
+    position: static;
+}
+
+.filmStrip .control {
+    background-color:rgba(255,0,0,0.6);
+    cursor: pointer;
+    height: 63px;
+    margin: 10px 5px;
+    width: 20px;
+}
+
+.filmStrip .control:hover {
+    background-color:rgba(255,0,0,0.8);
+}
+
+.filmStrip .left {
+    float: left;
+}
+
+.filmStrip .right {
+    float: right;
+}
+
+.filmStrip .images {
+    margin: 10px 35px;
+    overflow: hidden;
+    position: relative;
+}
+
+.filmStrip .container {
+    overflow: hidden;
+    position: relative;
+}
+
+.filmStrip li {
+    background-position:center; 
+    background-repeat:no-repeat;
+    background-size:auto 63px;
+    border: solid 1px #CCC;
+    cursor: pointer;
+    float: left;
+    height: 61px;
+    margin-right: 10px;
+    width: 61px;
+}
+
+.filmStrip li:hover {
+    border: solid 1px #F66;
+}
+
+.details {
+    background-color:rgba(0,0,0,0.6);
+    color: #FFF;
+    float: right;
+    position: relative;
+    width: 256px;
+    z-index: 10;
+}
+
+.details .project-navigation {
+    background-color: #232227;
+    overflow: hidden;
+}
+
+.details .project-navigation li {
+    float: left;
+    line-height: 1.8em;
+    text-align: center;
+    width:33.33%;
+}
+
+.details .information {
+    margin: 10px;
+}
+
+.details .information {
+    font-size: 10pt;
+    margin: 5px;
+    /*max-height: 20px;*/
+    overflow: hidden;
+}
+
+.details .information li {
+    margin-bottom: 5px;
+}
+
+.details .information strong {
+    color: #F00;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    width: 60px;
+}
+
+.details .information span {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: baseline;
+    width: 165px;
+}
+
+.details .map {
+    /*background-color: #F00;*/
+    height: 256px;
+}
+
+.details .map .google-map {
+    height: 251px;
+    margin: 5px;
+}
