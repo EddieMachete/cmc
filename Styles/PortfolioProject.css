@@ -74,6 +74,20 @@
     width:33.33%;
 }
 
+.details .project-navigation a,
+.details .project-navigation .previous,
+.details .project-navigation .next {
+    color: #FFF;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.details .project-navigation a:hover,
+.details .project-navigation .previous:hover,
+.details .project-navigation .next:hover {
+    text-decoration:underline;
+}
+
 .details .information {
     margin: 10px;
 }

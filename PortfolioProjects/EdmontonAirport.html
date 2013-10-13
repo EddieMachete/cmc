@@ -48,7 +48,7 @@
             </ul>
         </div>
     </div>
-    <div id="MainContent">
+    <div id="MainContent" data-controller="PortfolioProject" data-name="ProjectId" data-value="EdmontonAirport">
         <div class="content-header" data-controller="PortfolioProject" data-name="ContentHeader">
             <div class="map-button" data-controller="ProjectMap" data-name="MapButton">Browse Projects by Location</div>
             <h1>Portfolio</h1>
@@ -79,9 +79,9 @@
             </div>
             <div class="details">
                 <ul class="project-navigation">
-                    <li class="previous">PREV</li>
-                    <li class="all">VIEW ALL</li>
-                    <li class="next">NEXT</li>
+                    <li class="previous" data-controller="PortfolioProject" data-name="PreviousButton">PREV</li>
+                    <li class="all"><a href="../Portfolio.html">VIEW ALL</a></li>
+                    <li class="next" data-controller="PortfolioProject" data-name="NextButton">NEXT</li>
                 </ul>
                 <ul class="information">
                     <li>

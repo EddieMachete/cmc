@@ -1,5 +1,6 @@
 sci.Require('sci.Calculations');
 sci.Require('sci.cmc.MapStyles');
+sci.Require('sci.cmc.ProjectList');
 sci.Require('sci.cmc.ProjectMap');
 sci.Provide('sci.cmc.PortfolioProjectController');
 
@@ -9,7 +10,6 @@ sci.cmc.PortfolioProjectController = function()
     this.FilmStrip = null;
     this.Container = null;
     this.Slides = null;
-    this.InfoWindow = null;
     
     this.Header = null;
     this.Footer = null;
@@ -24,8 +24,8 @@ sci.cmc.PortfolioProjectController = function()
     this.NextAutomaticTransition = 8000;
     this.NextImageResize = 0;
     
+    this.Projects = sci.cmc.ProjectList;
     this.IsIpad = false;
-    
     this.Output = null;
 };
 
@@ -54,13 +54,19 @@ sci.cmc.PortfolioProjectController.prototype.Initialize = function(view)
     var slideDuration = parseInt(currentSlide.attr('data-slide-duration'), 10);
     this.NextAutomaticTransition = isNaN(slideDuration) ? 8000 : slideDuration;
     
+    // Initialize project Index value
+    this.ProjectIndex = this.GetProjectIndex(binds.filter('[data-name=ProjectId]').attr('data-value'));
+    
     // Initialize google maps
     (new sci.cmc.ProjectMap('')).Initialize();
     this.InitializeMap(binds.filter('[data-name=Map]'));
     
-    
     $(window).resize(function (e) { return that.Window_Resize(e); });
     this.IsIpad = navigator.userAgent.match(/iPad/i);
+    binds.filter('[data-name=PreviousButton]')
+        .bind('click', function (e) { return that.Previous_Click(e); });
+    binds.filter('[data-name=NextButton]')
+        .bind('click', function (e) { return that.Next_Click(e); });
     binds.filter('[data-name=LeftButton]')
         .bind(this.IsIpad ? "touchstart" : "click", function (e) { return that.LeftButton_Click(e); });
     binds.filter('[data-name=RightButton]')
@@ -125,7 +131,7 @@ sci.cmc.PortfolioProjectController.prototype.SwapImages = function(currentSlide,
         .removeClass('hidden');
 };
 
-sci.cmc.PortfolioProjectController.prototype.KillSlideTransition = function ()
+sci.cmc.PortfolioProjectController.prototype.KillSlideTransition = function()
 {
     if (!this.SlideTween.Active)
         return;
@@ -134,9 +140,28 @@ sci.cmc.PortfolioProjectController.prototype.KillSlideTransition = function ()
     this.SlideTween.CurrentSlide.addClass('hidden').css('left', '0px');
     this.SlideTween.NextSlide.css('left', (this.SlideTween.C + this.SlideTween.CurrentSlideWidth) + 'px');
 };
+
+sci.cmc.PortfolioProjectController.prototype.GetProjectIndex = function(projectId) {
+    var index = 0;
+    var projectIndex = -1;
     
+    while (projectIndex == -1 && index < this.Projects.length) {
+        if (this.Projects[index].Id == projectId)
+            projectIndex = index;
+        
+        index++;
+    }
+    
+    return projectIndex;
+};
+
 sci.cmc.PortfolioProjectController.prototype.InitializeMap = function(view) {
-    var coordinates = new google.maps.LatLng(parseFloat(view.attr('data-latitude')), parseFloat(view.attr('data-longitude')));
+    if (this.ProjectIndex < 0)
+        return;
+        
+    var project = this.Projects[this.ProjectIndex];
+    var url = project.Url;
+    var coordinates = new google.maps.LatLng(project.Latitude, project.Longitude);
     var mapOptions = {
             zoom: 10,
             center: coordinates,
@@ -153,7 +178,11 @@ sci.cmc.PortfolioProjectController.prototype.InitializeMap = function(view) {
     var marker = new google.maps.Marker({
                     map: map,
                     position: coordinates,
-                    title: view.attr('data-title')});
+                    title: project.Title});
+    
+    google.maps.event.addListener(marker, 'click', function() {
+        window.open(url,'_blank');
+    });
 };
 
 sci.cmc.PortfolioProjectController.prototype.Interval_Interval = function (e)
@@ -235,6 +264,16 @@ sci.cmc.PortfolioProjectController.prototype.Thumbnail_Click = function (e) {
         this.SwapImages(this.Slides.filter(':not(.hidden)'), nextSlide);
     
     return true;
+};
+    
+sci.cmc.PortfolioProjectController.prototype.Previous_Click = function(e) {
+    var index = this.ProjectIndex == 0 ? this.Projects.length -1 : this.ProjectIndex - 1;
+    window.open(this.Projects[index].Id + '.html','_self');
+};
+    
+sci.cmc.PortfolioProjectController.prototype.Next_Click = function(e) {
+    var index = this.ProjectIndex == this.Projects.length -1 ? 0 : this.ProjectIndex + 1;
+    window.open(this.Projects[index].Id + '.html','_self');
 };
 
 sci.Ready('sci.ui.PortfolioProjectController');
