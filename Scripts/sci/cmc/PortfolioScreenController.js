@@ -1,6 +1,7 @@
 sci.Require('sci.cmc.MapStyles');
 sci.Require('sci.cmc.PortfolioProjectCollectionController');
 sci.Require('sci.cmc.ProjectMap');
+sci.Require('sci.cmc.ScreenController');
 sci.Provide('sci.cmc.PortfolioScreenController');
 sci.cmc.PortfolioScreenController = function() {};
 
@@ -18,6 +19,7 @@ sci.cmc.PortfolioScreenController.prototype.Initialize = function(view)
     
     // Initialize google maps
     (new sci.cmc.ProjectMap('PortfolioProjects/')).Initialize();
+    (new sci.cmc.ScreenController()).Initialize();
 };
 
 sci.Ready('sci.cmc.PortfolioScreenController');

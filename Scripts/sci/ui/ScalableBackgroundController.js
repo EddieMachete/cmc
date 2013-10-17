@@ -28,9 +28,9 @@ sci.ui.ScalableBackgroundController.prototype.Initialize = function(view)
     this.Image = this.View.find('img');
     this.ImageSize = { Width:parseInt(this.Image.attr('width'), 10), Height:parseInt(this.Image.attr('height'), 10) };
     
-    var jqueryHelper = $('img.current, img.next, #Header, #MainContent, #Footer, .filmStrip');
-    this.Header = jqueryHelper.filter('#Header');
-    this.MainContent = jqueryHelper.filter('#MainContent');
+    var jqueryHelper = $('img.current, img.next, .page-header, .main-content, #Footer, .filmStrip');
+    this.Header = jqueryHelper.filter('.page-header');
+    this.MainContent = jqueryHelper.filter('.main-content');
     this.Footer = jqueryHelper.filter('#Footer');
     
     this.Output = $('#Output');

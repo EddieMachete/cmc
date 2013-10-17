@@ -8,8 +8,9 @@ function Body_Load()
     var backgroundController = new sci.ui.ScalableBackgroundController();
     backgroundController.Initialize(jqueryHelper.filter('.backgroundImageContainer').first());
     
-    hAndF = $('#Header').height() + $('#Footer').height();
+    hAndF = $('.page-header').height() + $('#Footer').height();
     RepositionDetails();
+    (new sci.cmc.ScreenController()).Initialize();
     
     $(window).resize(RepositionDetails);
 }

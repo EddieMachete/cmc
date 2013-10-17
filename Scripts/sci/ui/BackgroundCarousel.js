@@ -35,8 +35,8 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
     var jqueryHelper = this.View.find('.slide');
     this.Slides = jqueryHelper.filter('.slide');
     
-    jqueryHelper = $('img.current, img.next, #Header, #Footer, .filmStrip');
-    this.Header = jqueryHelper.filter('#Header');
+    jqueryHelper = $('img.current, img.next, .page-header, #Footer, .filmStrip');
+    this.Header = jqueryHelper.filter('.page-header');
     this.Footer = jqueryHelper.filter('#Footer');
     this.FilmStrip = jqueryHelper.filter('.filmStrip');
     this.Output = $('#Output');
@@ -70,11 +70,17 @@ sci.ui.BackgroundCarousel.prototype.Initialize = function(view)
 
 sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
 {
+    var largeScreenWidth = 800;
+    
     var windowWidth = this.Container.width();
-    var windowHeight = this.Container.height() - this.Header.height() - this.Footer.height();
+    var windowHeight = this.Container.height() - this.Header.height() - this.FilmStrip.height();
+    
+    if (windowWidth >= largeScreenWidth)
+        windowHeight = windowHeight - this.Footer.height();
+    
     this.View.height(windowHeight);
-    var detailsWidth = this.View.width() - 120;
-    detailsWidth = detailsWidth < 450 ? 450 : detailsWidth;
+    var detailsWidth = this.View.width() - (windowWidth > largeScreenWidth ? 240 : 30);
+    //detailsWidth = detailsWidth < 450 ? 450 : detailsWidth;
     
     for (var i=0; i<this.Slides.length; i++)
     {
@@ -100,7 +106,7 @@ sci.ui.BackgroundCarousel.prototype.UpdateImageSizes = function()
             .css('left', (-offsetLeft) + 'px');
         
         slide.find('.details').css('top', (this.View.height() / 3.5 + offsetTop) + 'px')
-            .css('left', (120 + offsetLeft) + 'px')
+            .css('left', (windowWidth > largeScreenWidth ? 120 + offsetLeft : 15 + offsetLeft) + 'px')
             .css('width', detailsWidth + 'px');
     }
 };

@@ -1,8 +1,3 @@
-<?php
-include 'Mobile_Detect.php';
-$detect = new Mobile_Detect();
-$isMobile = $detect->isMobile() && !$detect->isTablet();
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
@@ -11,11 +6,12 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
     <meta http-equiv="Content-Language" content="en-us" />
     <meta name="distribution" content="Global" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Shared/Site.css" rel="stylesheet" type="text/css" />
     <link href="Styles/index.css" rel="stylesheet" type="text/css" />
     <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/ResizeForMobile.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/cmc/ScreenController.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/Calculations.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/ui/BackgroundCarousel.js"></script>
     <script language="javascript" type="text/javascript">
@@ -26,18 +22,22 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
             var jqueryHelper = $('.backgroundCarousel');
             var carouselController = new sci.ui.BackgroundCarousel();
             carouselController.Initialize(jqueryHelper.filter('.backgroundCarousel').first());
+            (new sci.cmc.ScreenController()).Initialize();
         }
     </script>
 </head>
 <body>
-    <div id="Header">
+    <div class="page-header">
         <div class="logo">
-            <a href="index.php"><img src="Images/Logo.png" width="164" height="103" /></a>
+            <a href="index.html"><img src="Images/Logo.png" width="164" height="103" /></a>
         </div>
         <div class="slogan">Building your legacy</div>
-        <div class="mainNavigation">
+        <div class="controls">
+            <div class="main-navigation-toggle" data-controller="Screen" data-name="MainNavigationToggle">&nbsp;</div>
+        </div>
+        <div class="main-navigation hidden" data-controller="Screen" data-name="MainNavigation">
             <ul>
-                <li class="selected"><a href="index.php">Home</a></li>
+                <li class="selected"><a href="index.html">Home</a></li>
                 <li><a href="Company.html">Company</a></li>
                 <li><a href="Systems.html">Systems</a></li>
                 <li><a href="Surfaces.html">Surfaces</a></li>
@@ -49,8 +49,8 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
     </div>
     <div id="MainContent">
         <div class="backgroundCarousel">
-            <div class="slide newsAndAnnouncements" <?php print($isMobile ? 'data-image-width="1200" data-image-height="727"' : 'data-image-width="1200" data-image-height="727"'); ?> data-slide-duration="8000" data-slide="one">
-                <?php print($isMobile ? '<img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />' : '<img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />'); ?>
+            <div class="slide newsAndAnnouncements" data-image-width="1200" data-image-height="727" data-slide-duration="8000" data-slide="one">
+                <img src="Images/Large/hotel-alma.jpg" width="1200" height="727" />
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">News & announcements</div>
@@ -65,8 +65,8 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="798"' : 'data-image-width="1200" data-image-height="798"'); ?> data-slide-duration="10000" data-slide="two">
-                <?php print($isMobile ? '<img src="Images/Large/airport-control-tower.jpg" width="1200" height="798" />' : '<img src="Images/Large/airport-control-tower.jpg" width="1200" height="798" />'); ?>
+            <div class="slide hidden" data-image-width="1200" data-image-height="798" data-slide-duration="10000" data-slide="two">
+                <img src="Images/Large/airport-control-tower.jpg" width="1200" height="798" />
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Airport Control Tower</div>
@@ -82,8 +82,8 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="746"' : 'data-image-width="1200" data-image-height="746"'); ?> data-slide-duration="10000" data-slide="three">
-                <?php print($isMobile ? '<img src="Images/Large/uc-irvine-medical-center.jpg" width="1200" height="746" />' : '<img src="Images/Large/uc-irvine-medical-center.jpg" width="1200" height="746" />'); ?>
+            <div class="slide hidden" data-image-width="1200" data-image-height="746" data-slide-duration="10000" data-slide="three">
+                <img src="Images/Large/uc-irvine-medical-center.jpg" width="1200" height="746" />
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Metal roofing and cladding</div>
@@ -96,8 +96,8 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="797"' : 'data-image-width="1200" data-image-height="797"'); ?> data-slide-duration="10000" data-slide="four">
-                <?php print($isMobile ? '<img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />' : '<img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />'); ?>
+            <div class="slide hidden" data-image-width="1200" data-image-height="797" data-slide-duration="10000" data-slide="four">
+                <img src="Images/Large/alberta-childrens-hospital.jpg" width="1200" height="797" />
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Awards</div>
@@ -111,8 +111,8 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"'); ?> data-slide-duration="10000" data-slide="five">
-                <?php print($isMobile ? '<img src="Images/Large/science-centre.jpg" width="1200" height="900" />' : '<img src="Images/Large/science-centre.jpg" width="1200" height="900" />'); ?>
+            <div class="slide hidden" data-image-width="1200" data-image-height="900" data-slide-duration="10000" data-slide="five">
+                <img src="Images/Large/science-centre.jpg" width="1200" height="900" />
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Telus Science Centre</div>
@@ -125,8 +125,8 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
                     </ul>
                 </div>
             </div>
-            <div class="slide hidden" <?php print($isMobile ? 'data-image-width="1200" data-image-height="900"' : 'data-image-width="1200" data-image-height="900"'); ?> data-slide-duration="10000" data-slide="six">
-                <?php print($isMobile ? '<img src="Images/Large/teacher-union.jpg" width="1200" height="900" />' : '<img src="Images/Large/teacher-union.jpg" width="1200" height="900" />'); ?>
+            <div class="slide hidden" data-image-width="1200" data-image-height="900" data-slide-duration="10000" data-slide="six">
+                <img src="Images/Large/teacher-union.jpg" width="1200" height="900" />
                 <div class="details">
                     <div class="highlight"></div>
                     <div class="title">Custom metal contracting</div>
@@ -197,6 +197,5 @@ $isMobile = $detect->isMobile() && !$detect->isTablet();
         </ul>
         <div class="copyright">&copy; 2012 Custom Metal Contracting Ltd.  All rights reserved.</div>
     </div>
-    <div id="Output">output</div>
 </body>
 </html>

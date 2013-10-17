@@ -1,7 +1,7 @@
 .details
 {
     color: white;
-    margin:150px 120px 0px 120px;
+    margin:150px 60px 0px 60px;
 }
 
 .details .highlight
@@ -14,11 +14,12 @@
 
 .details .title
 {
-    font-size:65px;
+    font-size:40px;
     font-weight:bold;
     letter-spacing:-.9px;
-    line-height:55px;
+    line-height:40px;
     padding-left:3px;
+    text-shadow: 2px 2px #000;
     text-transform:uppercase;
 }
 
@@ -40,4 +41,18 @@
 {
     background:url(../Images/bullet-arrow.gif) no-repeat center left;
     padding-left:20px;
+}
+
+@media(min-width:980px) {
+    .details
+    {
+        margin:150px 120px 0px 120px;
+    }
+
+    .details .title
+    {
+        font-size:65px;
+        letter-spacing:-.9px;
+        line-height:55px;
+    }
 }

@@ -1,10 +1,9 @@
 sci.Provide('sci.cmc.ScreenController');
 sci.cmc.ScreenController = function(){};
 
-sci.cmc.ScreenController.prototype.Initialize = function(view)
+sci.cmc.ScreenController.prototype.Initialize = function()
 {
-    this.View = view;
-    var bindings = this.View.find('[data-controller=Screen]');
+    var bindings = $('[data-controller=Screen]');
     
     var that = this;
     this.MainNavigation = bindings.filter('[data-name=MainNavigation]');

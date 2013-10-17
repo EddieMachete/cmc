@@ -19,7 +19,7 @@ sci.cmc.ProjectMap.prototype.Initialize = function() {
     this.MapZoomLevel = 3;
     this.SelectedCategory = null;
     this.MapStyles = sci.cmc.MapStyles.CmcStyle;
-    this.CanadaCoordinates = new google.maps.LatLng(62.227, -105.3809);
+    this.CanadaCoordinates = new google.maps.LatLng(50, -105.3809);
     this.MapContainer = binds.filter('[data-name=MapContainer]');
     
     this.Map = new google.maps.Map(binds.filter('[data-name=MapCanvas]')[0], mapOptions);

@@ -1,0 +1,7 @@
+.projects a {
+    background: url("../Images/Large/childrens-hospital.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+a.edmonton-airport {
+    background: url("../Images/Large/airport-control-tower.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+}

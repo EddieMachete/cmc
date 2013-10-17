@@ -3,9 +3,50 @@
     margin: 0;
     position: relative;
 }
+    
+.main-content .projects .details .category {
+    background-color: #F00;
+    color:#FFF;
+    font-size:1.8em;
+    line-height: 2em;
+    padding-right: 15px;
+    text-align: right;
+}
+    
+.main-content .projects .details .description,
+.main-content .projects .details .view-all {
+    display: none;
+}
 
-.main-content .projects {
-    /*max-width:960px;*/
+.main-content .projects .featured {
+    display: none;
+}
+
+.main-content .projects .all {
+    display: block;
+}
+
+.main-content .projects .all a,
+.main-content .projects .featured a {
+    /*background: url("../Images/Logo.png") no-repeat scroll center center rgba(0, 0, 0, 0);*/
+    background-size: 100% auto;
+    display: block;
+    height: 256px;
+    text-decoration: none;
+}
+    
+.main-content .projects .featured li,
+.main-content .projects .all li {
+    border-top: solid 1px #F00;
+}
+    
+.main-content .projects .featured li .title,
+.main-content .projects .all li .title {
+    color: #FFF;
+    font-size: 1.4em;
+    line-height: 1.8em;
+    margin-left: 15px;
+    text-shadow: 2px 2px #000;
 }
 
 @media(min-width:980px) {
@@ -26,9 +67,17 @@
     }
     
     .main-content .projects .details .category {
+        background-color: transparent;
         color:#FFF;
         font-size:1.5em;
+        line-height: 1.5em;
         margin-top:.5em;
+        padding-left: 0;
+    }
+    
+    .main-content .projects .details .description,
+    .main-content .projects .details .view-all {
+        display: block;
     }
     
     .main-content .projects .details .description {
@@ -56,6 +105,7 @@
     }
     
     .main-content .projects .featured {
+        display: block;
         overflow:hidden;
     }
     
@@ -75,10 +125,11 @@
         background-color: #000;
         background: rgba(0, 0, 0, 0.6);
         bottom: 0;
-        color: #FFF;
         line-height: 1.5em;
+        margin: 0;
         position: absolute;
         text-align: right;
+        text-shadow: none;
         width: 100%;
     }
     
@@ -100,5 +151,12 @@
     .main-content .projects .all ul {
         margin:20px 0 20px 70px;
         overflow:hidden;
+    }
+
+    .main-content .projects .all a,
+    .main-content .projects .featured a {
+        background-size: auto 100px;
+        height: 100px;
+        width: 150px;
     }
 }

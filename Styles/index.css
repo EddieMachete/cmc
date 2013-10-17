@@ -1,11 +1,9 @@
-body
-{
-    overflow: hidden;
+body {
+    overflow: visible;
 }
 
 /* *** Background Carousel ****************************** */
-.backgroundCarousel
-{
+.backgroundCarousel {
     overflow:hidden;
     position:relative;
 }
@@ -29,15 +27,12 @@ body
     display:none;
 }
 
-.backgroundCarousel .slide .details
-{
+.backgroundCarousel .slide .details {
     color:#FFF;
     display:none;
     left:0;
     position:relative;
-    /*text-shadow: 2px 2px #333;*/
     top:0;
-    /*width:450px;*/
 }
 
 .backgroundCarousel .slide .details .highlight
@@ -48,9 +43,8 @@ body
     width:35px;
 }
 
-.backgroundCarousel .slide .details .title
-{
-    font-size:65px;
+.backgroundCarousel .slide .details .title {
+    font-size:40px;
     font-weight:bold;
     letter-spacing:-.9px;
     line-height:55px;
@@ -58,16 +52,14 @@ body
     text-transform:uppercase;
 }
 
-.backgroundCarousel .slide .details .description
-{
+.backgroundCarousel .slide .details .description {
     font-size:15px;
     line-height:20px;
     margin:10px 0;
     max-width:800px;
 }
 
-.backgroundCarousel .slide .details .options
-{
+.backgroundCarousel .slide .details .options {
     font-size:15px;
     line-height:30px;
     margin:10px 0;
@@ -99,11 +91,11 @@ body
 
 .filmStrip
 {
-    bottom:0;
+    /*bottom:0;*/
     color:#FFF;
     height:81px;
     overflow:hidden;
-    position:absolute;
+    position:static;
     width:100%;
 }
 
@@ -111,10 +103,9 @@ body
 {
     background-color:#000;
     bottom:0;
-    /*height:81px;*/
-    height:7px;
+    /*height:7px;*/
     overflow:hidden;
-    position:absolute;
+    /*position:absolute;*/
     width:101%;
 }
 
@@ -153,18 +144,30 @@ body
     padding:10px 5px 0 5px;
 }
 
-.filmStrip .title span
-{
+.filmStrip .title span {
     visibility:hidden;
 }
 
-.filmStrip .title:hover
-{
+.filmStrip .title:hover {
     background:rgba(0, 0, 0, 0.6);
     visibility:visible;
 }
 
-.filmStrip .title:hover span
-{
+.filmStrip .title:hover span {
     visibility:visible;
+}
+
+@media(min-width:980px) {
+    body {
+        overflow: hidden;
+    }
+
+    .backgroundCarousel .slide .details .title {
+        font-size:65px;
+        font-weight:bold;
+        letter-spacing:-.9px;
+        line-height:55px;
+        padding-left:3px;
+        text-transform:uppercase;
+    }
 }

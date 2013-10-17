@@ -6,23 +6,28 @@
     <meta http-equiv="Content-Language" content="en-us" />
     <meta name="distribution" content="Global" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Shared/Site.css" rel="stylesheet" type="text/css" />
     <link href="Styles/UnderConstruction.css" rel="stylesheet" type="text/css" />
     <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/ResizeForMobile.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/cmc/ScreenController.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/Calculations.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/ui/ScalableBackgroundController.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/UnderConstruction.js"></script>
 </head>
 <body>
-    <div id="Header">
+    <div class="page-header">
         <div class="logo">
-            <a href="index.php"><img src="Images/Logo.png" width="164" height="103" /></a>
+            <a href="index.html"><img src="Images/Logo.png" width="164" height="103" /></a>
         </div>
         <div class="slogan">Building your legacy</div>
-        <div class="mainNavigation">
+        <div class="controls">
+            <div class="main-navigation-toggle" data-controller="Screen" data-name="MainNavigationToggle">&nbsp;</div>
+        </div>
+        <div class="main-navigation hidden" data-controller="Screen" data-name="MainNavigation">
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="Company.html">Company</a></li>
                 <li><a href="Systems.html">Systems</a></li>
                 <li class="selected"><a href="Surfaces.html">Surfaces</a></li>
@@ -32,7 +37,7 @@
             </ul>
         </div>
     </div>
-    <div id="MainContent">
+    <div class="main-content">
         <div class="backgroundImageContainer">
             <img src="Images/Large/under-construction.jpg" width="1200" height="900" />
         </div>
