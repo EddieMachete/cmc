@@ -6,22 +6,31 @@
     <meta http-equiv="Content-Language" content="en-us" />
     <meta name="distribution" content="Global" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Shared/Site.css" rel="stylesheet" type="text/css" />
     <link href="Styles/Downloads.css" rel="stylesheet" type="text/css" />
-    <!--<link href="Styles/UnderConstruction.css" rel="stylesheet" type="text/css" />-->
     <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/ResizeForMobile.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
-    <!--<script language="javascript" type="text/javascript" src="Scripts/sci/ui/ScalableBackgroundController.js"></script>-->
-    <!--<script language="javascript" type="text/javascript" src="Scripts/UnderConstruction.js"></script>-->
+    <script language="javascript" type="text/javascript" src="Scripts/sci/cmc/ScreenController.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(Body_Load);
+        
+        function Body_Load()
+        {
+            (new sci.cmc.ScreenController()).Initialize();
+        }
+    </script>
 </head>
 <body>
-    <div id="Header">
+    <div class="page-header">
         <div class="logo">
             <a href="index.html"><img src="Images/Logo.png" width="164" height="103" /></a>
         </div>
         <div class="slogan">Building your legacy</div>
-        <div class="mainNavigation">
+        <div class="controls">
+            <div class="main-navigation-toggle" data-controller="Screen" data-name="MainNavigationToggle">&nbsp;</div>
+        </div>
+        <div class="main-navigation hidden" data-controller="Screen" data-name="MainNavigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Company.html">Company</a></li>
@@ -33,19 +42,23 @@
             </ul>
         </div>
     </div>
-    <div id="MainContent">
+    <div class="main-content">
         <!--<div class="backgroundImageContainer">
             <img src="Images/Large/under-construction.jpg" width="1200" height="900" />
         </div>-->
         <div class="content">
             <h1>Downloads</h1>
             <div class="section withTranslucentBackground downloads">
-                <div class="header">
+                <!--<div class="header">
                     <h3 class="details">Details</h3>
                     <h3 class="information">Information</h3>
                 </div>
-                <div class="body">
-                    <ul class="details">
+                <div class="body">-->
+                <div class="column details">
+                    <div class="header">
+                        <h3>Details</h3>
+                    </div>
+                    <ul>
                         <li>
                             <div class="vertical">
                                 <span class="name">AP Series</span><span class="description">Vertical</span><a href="Downloads/AP Series Vert.pdf" target="_blank">.PDF</a>
@@ -127,7 +140,12 @@
                             </div>
                         </li>
                     </ul>
-                    <ul class="information">
+                </div>
+                <div class="column information">
+                    <div class="header">
+                        <h3>Information</h3>
+                    </div>
+                    <ul>
                         <li>
                             <div class="vertical">
                                 <span class="name">CMC Brochure</span><span class="description">8.5 X 11</span><a href="Downloads/CMC_Brochure.pdf" target="_blank">.PDF</a>

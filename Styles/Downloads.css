@@ -1,97 +1,99 @@
-.content .downloads
-{
-    margin-bottom:60px;
+.content .downloads {
     overflow:hidden;
 }
 
 .content .downloads .header,
-.content .downloads .body
-{
+.content .downloads ul {
     overflow:hidden;
 }
 
-.content .downloads .header
-{
+.content .downloads .header {
     border-bottom:solid 4px #F00;
 }
 
-.content .downloads .header h3
-{
+.content .downloads ul {
+    margin: 0 auto;
+}
+
+.content .downloads .header h3 {
     font-size:2.7em;
     font-weight:bold;
     line-height:1.5em;
+    margin: 0 auto;
     padding:0 10px;
     text-transform:uppercase;
 }
 
 .content .downloads .header h3,
-.content .downloads .body ul
+.content .downloads ul
 {
     background-color:#000;
     color:#FFF;
-    float:left;
-    margin:0 0 0 40px;
     padding:0 10px;
     width:380px;
 }
 
-.content .downloads .body
-{
-    margin-bottom:10px;
-}
-
-.content .downloads .header .details,
-.content .downloads .body .details
-{
-    margin-left:60px;
-}
-
-.content .downloads .body span,
-.content .downloads .body a
-{
+.content .downloads span,
+.content .downloads a {
     display:inline-block;
 }
 
-.content .downloads .body li
+.content .downloads .details {
+    margin-bottom: 30px;
+}
+
+.content .downloads li
 {
     font-size:1.1em;
     margin:1em 0;
 }
 
-.content .downloads .body .name
+.content .downloads .name
 {
     font-weight:bold;
     padding-left:20px;
     width:100px;
 }
 
-.content .downloads .body .information .name
-{
+.content .downloads .information .name {
     width:130px;
 }
 
-.content .downloads .body .vertical .name
+.content .downloads .vertical .name
 {
     background:url(../Images/bullet-arrow.gif) no-repeat left center;
 }
 
-.content .downloads .body .description
-{
+.content .downloads .description {
     width:220px;
 }
 
-.content .downloads .body .information .description
-{
+.content .downloads .information .description {
     width:190px;
 }
 
-.content .downloads .body a
-{
+.content .downloads a {
     color:#F03;
     text-decoration:none;
 }
 
-.content .downloads .body a:hover
-{
+.content .downloads a:hover {
     color:#FFF;
+}
+
+@media(min-width:900px) {
+
+    .content .downloads .header h3,
+    .content .downloads ul {
+        margin:0 0 0 60px;
+    }
+    
+    .content .downloads .details {
+        float:left;
+        margin-bottom: 0px;
+    }
+    
+    .content .information {
+        margin-left: 460px;
+    }
 }

@@ -1,4 +1,4 @@
-#MainContent .content .contact.section.withTranslucentBackground
+.main-content .content .contact.section.withTranslucentBackground
 {
     padding:0px 0px 100px 0px;
 }
@@ -14,9 +14,11 @@
     margin-top:15px;
 }
 
-.contact.section .officeGroup.corporate
-{
-    margin:15px 80px 0px 70px;
+.contact.section .officeGroup {
+    margin:15px 0 0 70px;
+}
+
+.contact.section .corporate {
     width:300px;
 }
 

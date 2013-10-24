@@ -9,7 +9,7 @@ function Body_Load()
     var backgroundController = new sci.ui.ScalableBackgroundController();
     backgroundController.Initialize(jqueryHelper.filter('.backgroundImageContainer').first());
     
-    _hAndF = $('#Header').height() + $('#Footer').height();
+    _hAndF = $('.page-header').height() + $('#Footer').height();
     //RepositionDetails();
     
     var news = jqueryHelper.filter('.section .news');
@@ -17,6 +17,8 @@ function Body_Load()
     
     news.find('.date').bind('click', Date_Click);
     //$(window).resize(RepositionDetails);
+    
+    (new sci.cmc.ScreenController()).Initialize();
 }
 
 /*function RepositionDetails()

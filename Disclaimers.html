@@ -3,16 +3,30 @@
 <head>
     <title>Disclaimers :: Custom Metal Contracting Ltd.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Styles/Common.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Shared/Site.css" rel="stylesheet" type="text/css" />
     <link href="Styles/Disclaimers.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/SciBootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/sci/cmc/ScreenController.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(Body_Load);
+        
+        function Body_Load()
+        {
+            (new sci.cmc.ScreenController()).Initialize();
+        }
+    </script>
 </head>
 <body>
-    <div id="Header">
+    <div class="page-header">
         <div class="logo">
             <a href="index.html"><img src="Images/Logo.png" width="164" height="103" /></a>
         </div>
         <div class="slogan">Building your legacy</div>
-        <div class="mainNavigation">
+        <div class="controls">
+            <div class="main-navigation-toggle" data-controller="Screen" data-name="MainNavigationToggle">&nbsp;</div>
+        </div>
+        <div class="main-navigation hidden" data-controller="Screen" data-name="MainNavigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Company.html">Company</a></li>
@@ -24,7 +38,7 @@
             </ul>
         </div>
     </div>
-    <div id="MainContent">
+    <div class="main-content">
         <div class="content">
             <h1>Disclaimers</h1>
             <div class="disclaimer section">
@@ -112,6 +126,5 @@
         </ul>
         <div class="copyright">&copy; 2012 Custom Metal Contracting Ltd.  All rights reserved.</div>
     </div>
-    <div id="Output">output</div>
 </body>
 </html>
