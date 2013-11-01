@@ -49,6 +49,13 @@
     text-shadow: 2px 2px #000;
 }
 
+@media(max-width:423px) {
+    .main-content .projects .all a,
+    .main-content .projects .featured a {
+        background-size: auto 100%;
+    }
+}
+
 @media(min-width:980px) {
     .main-content .projects li {
         background-color:#666;

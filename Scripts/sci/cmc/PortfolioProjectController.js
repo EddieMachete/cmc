@@ -10,9 +10,6 @@ sci.cmc.PortfolioProjectController = function()
     this.FilmStrip = null;
     this.Container = null;
     this.Slides = null;
-    
-    this.Header = null;
-    this.Footer = null;
         
     this.Interval;
     this.TimeElapsed = 0;
@@ -42,11 +39,10 @@ sci.cmc.PortfolioProjectController.prototype.Initialize = function(view)
     var jqueryHelper = this.View.find('.slide');
     this.Slides = jqueryHelper.filter('.slide');
     
-    jqueryHelper = $('img.current, img.next, #Header, #Footer, .filmStrip');
-    this.Header = jqueryHelper.filter('#Header');
+    jqueryHelper = $('img.current, img.next, .page-header, #Footer, .filmStrip');
+    this.Header = jqueryHelper.filter('.page-header');
     this.Footer = jqueryHelper.filter('#Footer');
     this.FilmStrip = jqueryHelper.filter('.filmStrip');
-    this.Output = $('#Output');
     
     this.UpdateImageSizes();
     
@@ -79,7 +75,7 @@ sci.cmc.PortfolioProjectController.prototype.Initialize = function(view)
 sci.cmc.PortfolioProjectController.prototype.UpdateImageSizes = function()
 {
     var windowWidth = this.Container.width();
-    var windowHeight = this.Container.height() - this.Header.height() - this.FilmStrip.height() - this.Footer.height() - this.ContentHeader.height();
+    var windowHeight = this.Container.height() - this.Header.height() - this.FilmStrip.height() - this.ContentHeader.height() - (windowWidth > 980 ? this.Footer.height() : 0);
     this.View.height(windowHeight);
     var detailsWidth = this.View.width() - 120;
     detailsWidth = detailsWidth < 450 ? 450 : detailsWidth;
